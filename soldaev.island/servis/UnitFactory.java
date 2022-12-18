@@ -4,11 +4,12 @@ import unit.Organizm;
 import unit.animal.*;
 
 public class UnitFactory {
-    public UnitFactory(){}
+    public UnitFactory() {
+    }
 
-    public Organizm create(TypAnimal type){
+    public Organizm create(TypeAnimal type) {
         Organizm organizm = null;
-        switch (type){
+        switch (type) {
             case BEAR:
                 organizm = new Bear();
                 break;

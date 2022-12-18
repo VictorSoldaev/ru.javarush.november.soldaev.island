@@ -1,6 +1,6 @@
 package servis;
 
-public enum TypAnimal {
+public enum TypeAnimal {
     WOLF,
     DUCK,
     CATERPILLAR,

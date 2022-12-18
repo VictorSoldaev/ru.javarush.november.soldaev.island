@@ -1,14 +1,21 @@
 package servis;
 
-public class Task implements Runnable{
+public class Task implements Runnable {
     int taskNit;
     World world = new World();
-    public Task(int taskNit){
+
+    public Task(int taskNit) {
         this.taskNit = taskNit;
     }
 
     @Override
     public void run() {
-        world.start(taskNit);
+        try {
+            world.start(taskNit);
+        } catch (NoSuchFieldException e) {
+            throw new RuntimeException(e);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

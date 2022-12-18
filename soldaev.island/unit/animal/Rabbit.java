@@ -12,6 +12,7 @@ public class Rabbit extends Animal implements Herbivore{
     private float hp;
 
     public Rabbit() {
+        super(BaseStatsUnit.STATS_BASE_RABBIT);
         this.satiety = BaseStatsUnit.STATS_BASE_RABBIT.satiety;
         this.hp = BaseStatsUnit.STATS_BASE_RABBIT.weight;
     }
@@ -22,21 +23,9 @@ public class Rabbit extends Animal implements Herbivore{
     }
 
     @Override
-    public void move(int x, int y, Earth earth) {
-        for (int i = 0; i < 5; i++) {
-            int xmove = x + ThreadLocalRandom.current().nextInt(0, BaseStatsUnit.STATS_BASE_RABBIT.speed);
-            int ymove = y + ThreadLocalRandom.current().nextInt(0, BaseStatsUnit.STATS_BASE_RABBIT.speed);
-            if (earth.add(this, xmove, ymove)) {
-                earth.getArrayListAnimals(x, y).remove(this);
-                break;
-            }
-        }
-    }
-
-    @Override
     public Animal multiply(int x, int y, Earth earth) {
         if (earth.getArrayListAnimals(x, y).size() > 1) {
-            return new Sheep();
+            return new Rabbit();
         }
         return null;
     }

@@ -9,6 +9,7 @@ public class Buffalo extends Animal implements Herbivore {
     private float hp;
 
     public Buffalo() {
+        super(BaseStatsUnit.STATS_BASE_BUFFALO);
         this.satiety = BaseStatsUnit.STATS_BASE_BUFFALO.satiety;
         this.hp = BaseStatsUnit.STATS_BASE_BUFFALO.weight;
     }
@@ -16,18 +17,6 @@ public class Buffalo extends Animal implements Herbivore {
     @Override
     public void eat(int x, int y, Earth earth) {
 
-    }
-
-    @Override
-    public void move(int x, int y, Earth earth) {
-        for (int i = 0; i < 5; i++) {
-            int xmove = x + ThreadLocalRandom.current().nextInt(0, BaseStatsUnit.STATS_BASE_BUFFALO.speed);
-            int ymove = y + ThreadLocalRandom.current().nextInt(0, BaseStatsUnit.STATS_BASE_BUFFALO.speed);
-            if (earth.add(this, xmove, ymove)) {
-                earth.getArrayListAnimals(x, y).remove(this);
-                break;
-            }
-        }
     }
 
     @Override

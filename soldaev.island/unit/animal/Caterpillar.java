@@ -10,6 +10,7 @@ public class Caterpillar extends Animal implements Herbivore{
     private float hp;
 
     public Caterpillar() {
+        super(BaseStatsUnit.STATS_BASE_CATERPILLAR);
         this.satiety = BaseStatsUnit.STATS_BASE_CATERPILLAR.satiety;
         this.hp = BaseStatsUnit.STATS_BASE_CATERPILLAR.weight;
     }
@@ -17,18 +18,6 @@ public class Caterpillar extends Animal implements Herbivore{
     @Override
     public void eat(int x, int y, Earth earth) {
 
-    }
-
-    @Override
-    public void move(int x, int y, Earth earth) {
-        for (int i = 0; i < 5; i++) {
-            int xmove = x + ThreadLocalRandom.current().nextInt(0, BaseStatsUnit.STATS_BASE_CATERPILLAR.speed);
-            int ymove = y + ThreadLocalRandom.current().nextInt(0, BaseStatsUnit.STATS_BASE_CATERPILLAR.speed);
-            if (earth.add(this, xmove, ymove)) {
-                earth.getArrayListAnimals(x, y).remove(this);
-                break;
-            }
-        }
     }
 
     @Override

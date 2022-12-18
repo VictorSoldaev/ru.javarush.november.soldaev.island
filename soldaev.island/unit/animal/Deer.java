@@ -12,6 +12,7 @@ public class Deer extends Animal implements Herbivore{
     private float hp;
 
     public Deer() {
+        super(BaseStatsUnit.STATS_BASE_DEER);
         this.satiety = BaseStatsUnit.STATS_BASE_DEER.satiety;
         this.hp = BaseStatsUnit.STATS_BASE_DEER.weight;
     }
@@ -19,18 +20,6 @@ public class Deer extends Animal implements Herbivore{
     @Override
     public void eat(int x, int y, Earth earth) {
 
-    }
-
-    @Override
-    public void move(int x, int y, Earth earth) {
-        for (int i = 0; i < 5; i++) {
-            int xmove = x + ThreadLocalRandom.current().nextInt(0, BaseStatsUnit.STATS_BASE_DEER.speed);
-            int ymove = y + ThreadLocalRandom.current().nextInt(0, BaseStatsUnit.STATS_BASE_DEER.speed);
-            if (earth.add(this, xmove, ymove)) {
-                earth.getArrayListAnimals(x, y).remove(this);
-                break;
-            }
-        }
     }
 
     @Override

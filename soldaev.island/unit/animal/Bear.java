@@ -12,8 +12,8 @@ public class Bear extends Animal implements Predator {
     private float satiety;
     private float hp;
 
-
     public Bear() {
+        super(BaseStatsUnit.STATS_BASE_BEAR);
         this.satiety = BaseStatsUnit.STATS_BASE_BEAR.satiety;
         this.hp = BaseStatsUnit.STATS_BASE_BEAR.weight;
     }
@@ -21,18 +21,6 @@ public class Bear extends Animal implements Predator {
     @Override
     public void eat(int x, int y, Earth earth) {
         satiety = satiety + hunt(x, y, earth) > 0 ? hunt(x, y, earth) : -1;
-    }
-
-    @Override
-    public void move(int x, int y, Earth earth) {
-        for (int i = 0; i < 5; i++) {
-            int xmove = x + ThreadLocalRandom.current().nextInt(0, BaseStatsUnit.STATS_BASE_BEAR.speed);
-            int ymove = y + ThreadLocalRandom.current().nextInt(0, BaseStatsUnit.STATS_BASE_BEAR.speed);
-            if (earth.add(this, xmove, ymove)) {
-                earth.getArrayListAnimals(x, y).remove(this);
-                break;
-            }
-        }
     }
 
     @Override

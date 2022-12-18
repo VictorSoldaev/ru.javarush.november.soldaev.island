@@ -3,7 +3,6 @@ package unit.animal;
 import location.Earth;
 import setting.Setting;
 import unit.Organizm;
-
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
@@ -12,10 +11,10 @@ public interface Predator {
 
     default float hunt(int x, int y, Earth earth) {
         int counter = 3;
-        int speed = 4;
+        int speed = ((Animal)this).baseStatsUnit.speed;
         for (int i = 0; i < counter; i++) {
             int xhubt = x + ThreadLocalRandom.current().nextInt(1, speed);
-            int yhubt = x + ThreadLocalRandom.current().nextInt(1, speed);
+            int yhubt = y + ThreadLocalRandom.current().nextInt(1, speed);
             if (searchFood(earth.getArrayListAnimals(xhubt, yhubt))) {
                 return catchPrey(earth.getArrayListAnimals(xhubt, yhubt));
             }

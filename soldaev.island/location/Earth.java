@@ -40,6 +40,10 @@ public class Earth extends Location {
         return isAdd;
     }
 
+    public Organizm getOrganizm(int coordinateX, int coordinateY){
+        return this.land.get(coordinateX).get(coordinateY);
+    }
+
     public int getCoordinateX() {
         return coordinateX;
     }

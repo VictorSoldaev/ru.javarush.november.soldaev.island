@@ -1,46 +1,52 @@
 package servis;
 
 import location.Earth;
-import unit.Organizm;
+import unit.animal.*;
+import unit.plant.Grass;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class World implements Runnable {
+public class World {
     UnitFactory factory;
-    Earth island;
+    private Earth earth;
+    private int maxSizeX = 120;
+    private int maxSizeY = 20;
+    private int minSizeX = 0;
+    private int minSizeY = 0;
 
     public World() {
-        this.island = new Earth(120, 20);
-        this.factory = new UnitFactory();
+        this.earth = new Earth(maxSizeX, maxSizeY);
+        //  this.factory = new UnitFactory();
         createLife();
 
     }
 
     public World(int sizeX, int sizeY) {
-        this.island = new Earth(sizeX, sizeY);
+        this.earth = new Earth(sizeX, sizeY);
         this.factory = new UnitFactory();
         createLife();
     }
 
-    public void start(int i) {
-        int j = 0;
-        while (true) {
-            if (island.getOrganizm(i, j) == null) {
-                j++;
-                continue;
-            }
-            Organizm organizm = island.getOrganizm(i, j);
-            if (true) {
-                // Кушаем?
-            }
-            if (true) {
-                // Размножаемся?
-            }
-            if (true) {
-                // идем?
-            }
-            j++;
-        }
+    public void start(int i) throws NoSuchFieldException, IllegalAccessException {
+//        int j = 0;
+//        while (true) {
+//            if (island.getOrganizm(i, j) == null) {
+//                j++;
+//                continue;
+//            }
+//            unit.animal.Animal organizm = (unit.animal.Animal) island.getOrganizm(i, j);
+//            if (true) {
+//                // Кушаем?
+//                organizm.eat(island.getLock(i));
+//            }
+//            if (true) {
+//                // Размножаемся?
+//            }
+//            if (true) {
+//                // идем?
+//            }
+//            j++;
+//        }
 
         // создаем все необходимое для мира
         // создаем потоков равное кординате X
@@ -56,37 +62,119 @@ public class World implements Runnable {
         // ......
     }
 
-    public void createLife() {
-        int sis = island.getCoordinateX();
-        int creat = 0;
-        int i = ThreadLocalRandom.current().nextInt(0, sis);
-        while (creat != 2) {
-            if (island.isAdd(i)) {
-                island.add(factory.create(TypAnimal.BEAR), i);
-                creat++;
-            }
+    private void createLife() {
+        int x = ThreadLocalRandom.current().nextInt(minSizeX, maxSizeX);
+        int y = ThreadLocalRandom.current().nextInt(minSizeY, maxSizeY);
+        for (int i = 0; i < 2; i++) {
+            earth.add(new Bear(), x, y);
         }
-        creat = 0;
-        i = ThreadLocalRandom.current().nextInt(0, sis);
-        while (creat != 2) {
-            if (island.isAdd(i)) {
-                island.add(factory.create(TypAnimal.DUCK), i);
-                creat++;
-            }
+        x = ThreadLocalRandom.current().nextInt(minSizeX, maxSizeX);
+        y = ThreadLocalRandom.current().nextInt(minSizeY, maxSizeY);
+        for (int i = 0; i < 2; i++) {
+            earth.add(new Buffalo(), x, y);
         }
-        creat = 0;
-        i = ThreadLocalRandom.current().nextInt(0, sis);
-        while (creat != 2) {
-            if (island.isAdd(i)) {
-                island.add(factory.create(TypAnimal.CATERPILLAR), i);
-                creat++;
-            }
+        x = ThreadLocalRandom.current().nextInt(minSizeX, maxSizeX);
+        y = ThreadLocalRandom.current().nextInt(minSizeY, maxSizeY);
+        for (int i = 0; i < 2; i++) {
+            earth.add(new Caterpillar(), x, y);
+        }
+        x = ThreadLocalRandom.current().nextInt(minSizeX, maxSizeX);
+        y = ThreadLocalRandom.current().nextInt(minSizeY, maxSizeY);
+        for (int i = 0; i < 2; i++) {
+            earth.add(new Deer(), x, y);
+        }
+        x = ThreadLocalRandom.current().nextInt(minSizeX, maxSizeX);
+        y = ThreadLocalRandom.current().nextInt(minSizeY, maxSizeY);
+        for (int i = 0; i < 2; i++) {
+            earth.add(new Duck(), x, y);
+        }
+        x = ThreadLocalRandom.current().nextInt(minSizeX, maxSizeX);
+        y = ThreadLocalRandom.current().nextInt(minSizeY, maxSizeY);
+        for (int i = 0; i < 2; i++) {
+            earth.add(new Eagle(), x, y);
+        }
+        x = ThreadLocalRandom.current().nextInt(minSizeX, maxSizeX);
+        y = ThreadLocalRandom.current().nextInt(minSizeY, maxSizeY);
+        for (int i = 0; i < 2; i++) {
+            earth.add(new Fox(), x, y);
+        }
+        x = ThreadLocalRandom.current().nextInt(minSizeX, maxSizeX);
+        y = ThreadLocalRandom.current().nextInt(minSizeY, maxSizeY);
+        for (int i = 0; i < 2; i++) {
+            earth.add(new Goat(), x, y);
+        }
+        x = ThreadLocalRandom.current().nextInt(minSizeX, maxSizeX);
+        y = ThreadLocalRandom.current().nextInt(minSizeY, maxSizeY);
+        for (int i = 0; i < 2; i++) {
+            earth.add(new Goat(), x, y);
+        }
+        x = ThreadLocalRandom.current().nextInt(minSizeX, maxSizeX);
+        y = ThreadLocalRandom.current().nextInt(minSizeY, maxSizeY);
+        for (int i = 0; i < 2; i++) {
+            earth.add(new Hog(), x, y);
+        }
+        x = ThreadLocalRandom.current().nextInt(minSizeX, maxSizeX);
+        y = ThreadLocalRandom.current().nextInt(minSizeY, maxSizeY);
+        for (int i = 0; i < 2; i++) {
+            earth.add(new Horse(), x, y);
+        }
+        x = ThreadLocalRandom.current().nextInt(minSizeX, maxSizeX);
+        y = ThreadLocalRandom.current().nextInt(minSizeY, maxSizeY);
+        for (int i = 0; i < 2; i++) {
+            earth.add(new Mouse(), x, y);
+        }
+        x = ThreadLocalRandom.current().nextInt(minSizeX, maxSizeX);
+        y = ThreadLocalRandom.current().nextInt(minSizeY, maxSizeY);
+        for (int i = 0; i < 2; i++) {
+            earth.add(new Python(), x, y);
+        }
+        x = ThreadLocalRandom.current().nextInt(minSizeX, maxSizeX);
+        y = ThreadLocalRandom.current().nextInt(minSizeY, maxSizeY);
+        for (int i = 0; i < 2; i++) {
+            earth.add(new Rabbit(), x, y);
+        }
+        x = ThreadLocalRandom.current().nextInt(minSizeX, maxSizeX);
+        y = ThreadLocalRandom.current().nextInt(minSizeY, maxSizeY);
+        for (int i = 0; i < 2; i++) {
+            earth.add(new Sheep(), x, y);
+        }
+        x = ThreadLocalRandom.current().nextInt(minSizeX, maxSizeX);
+        y = ThreadLocalRandom.current().nextInt(minSizeY, maxSizeY);
+        for (int i = 0; i < 2; i++) {
+            earth.add(new Wolf(), x, y);
         }
 
+
+        x = ThreadLocalRandom.current().nextInt(minSizeX, maxSizeX);
+        y = ThreadLocalRandom.current().nextInt(minSizeY, maxSizeY);
+        for (int i = 0; i < 10; i++) {
+            earth.add(new Grass(), x, y);
+        }
+        x = ThreadLocalRandom.current().nextInt(minSizeX, maxSizeX);
+        y = ThreadLocalRandom.current().nextInt(minSizeY, maxSizeY);
+        for (int i = 0; i < 10; i++) {
+            earth.add(new Grass(), x, y);
+        }
+        x = ThreadLocalRandom.current().nextInt(minSizeX, maxSizeX);
+        y = ThreadLocalRandom.current().nextInt(minSizeY, maxSizeY);
+        for (int i = 0; i < 10; i++) {
+            earth.add(new Grass(), x, y);
+        }
+        x = ThreadLocalRandom.current().nextInt(minSizeX, maxSizeX);
+        y = ThreadLocalRandom.current().nextInt(minSizeY, maxSizeY);
+        for (int i = 0; i < 10; i++) {
+            earth.add(new Grass(), x, y);
+        }
+        x = ThreadLocalRandom.current().nextInt(minSizeX, maxSizeX);
+        y = ThreadLocalRandom.current().nextInt(minSizeY, maxSizeY);
+        for (int i = 0; i < 10; i++) {
+            earth.add(new Grass(), x, y);
+        }
+        x = ThreadLocalRandom.current().nextInt(minSizeX, maxSizeX);
+        y = ThreadLocalRandom.current().nextInt(minSizeY, maxSizeY);
+        for (int i = 0; i < 10; i++) {
+            earth.add(new Grass(), x, y);
+        }
     }
 
-    @Override
-    public void run() {
-
-    }
 }

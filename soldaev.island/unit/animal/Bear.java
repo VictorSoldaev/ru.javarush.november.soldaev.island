@@ -1,48 +1,48 @@
 package unit.animal;
 
-import servis.TypAnimal;
+import location.Earth;
+import servis.UnitFactory;
 import setting.BaseStatsUnit;
-import setting.Setting;
-import java.lang.reflect.Field;
+
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Bear extends Animal {
+
+public class Bear extends Animal implements Predator {
 
     private float satiety;
     private float hp;
 
-    public Bear(){
+
+    public Bear() {
         this.satiety = BaseStatsUnit.STATS_BASE_BEAR.satiety;
         this.hp = BaseStatsUnit.STATS_BASE_BEAR.weight;
     }
 
     @Override
-    public void toEat(Animal organizm) throws NoSuchFieldException, IllegalAccessException {
-        String foodName = organizm.getClass().getSimpleName();
-        Integer foodTableBearProbability = Setting.foodTable.get("Bear").get(foodName);
-        int probability = ThreadLocalRandom.current().nextInt(foodTableBearProbability, 101);
-        Field field = organizm.getClass().getDeclaredField("hp");
-        field.setAccessible(true);
-        float satietyPositive = (float) field.get(organizm);
-        if(probability == 100){
-            System.out.println("Медведь скушал " + foodName);
-            satiety = satiety + satietyPositive;
-        } else {
-            System.out.println("Медведь не скушал " + foodName);
+    public void eat(int x, int y, Earth earth) {
+        satiety = satiety + hunt(x, y, earth) > 0 ? hunt(x, y, earth) : -1;
+    }
+
+    @Override
+    public void move(int x, int y, Earth earth) {
+        for (int i = 0; i < 5; i++) {
+            int xmove = x + ThreadLocalRandom.current().nextInt(0, BaseStatsUnit.STATS_BASE_BEAR.speed);
+            int ymove = y + ThreadLocalRandom.current().nextInt(0, BaseStatsUnit.STATS_BASE_BEAR.speed);
+            if (earth.add(this, xmove, ymove)) {
+                earth.getArrayListAnimals(x, y).remove(this);
+                break;
+            }
         }
-
-    }
-
-
-    @Override
-    public void move() {
-
     }
 
     @Override
-    public TypAnimal multiply() {
-        return TypAnimal.BEAR;
+    public Animal multiply(int x, int y, Earth earth) {
+        if (earth.getArrayListAnimals(x, y).size() > 1) {
+            return new Bear();
+        }
+        return null;
     }
+
 
     public float getSatiety() {
         return satiety;

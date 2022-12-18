@@ -1,5 +1,27 @@
 package unit.animal;
 
-public class Hog extends Animal{
-    int hunger;
+import location.Earth;
+import unit.Organizm;
+
+import java.util.ArrayList;
+
+public class Hog extends Animal implements Herbivore, Predator{
+
+
+    @Override
+    public void eat(int x, int y, Earth earth) {
+
+    }
+
+    @Override
+    public void move() {
+
+    }
+
+    @Override
+    public Animal multiply() {
+        return new Hog();
+    }
+
+
 }

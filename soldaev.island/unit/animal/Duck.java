@@ -1,30 +1,28 @@
 package unit.animal;
 
 
-import setting.BaseStatsUnit;
+import location.Earth;
+import unit.Organizm;
 
-public class Duck extends Animal{
-    private float satiety;
-    private float hp;
+import java.util.ArrayList;
 
-    public Duck(){
-        this.satiety = BaseStatsUnit.STATS_BASE_DUCK.satiety;
-        this.hp = BaseStatsUnit.STATS_BASE_DUCK.weight;
+public class Duck extends Animal implements Herbivore, Predator{
+
+
+    @Override
+    public void eat(int x, int y, Earth earth) {
+
     }
 
-    public float getSatiety() {
-        return satiety;
+    @Override
+    public void move() {
+
     }
 
-    public void setSatiety(float satiety) {
-        this.satiety = satiety;
+    @Override
+    public Animal multiply() {
+        return new Duck();
     }
 
-    public float getHp() {
-        return hp;
-    }
 
-    public void setHp(float hp) {
-        this.hp = hp;
-    }
 }

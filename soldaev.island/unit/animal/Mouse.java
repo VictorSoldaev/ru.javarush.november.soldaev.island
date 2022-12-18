@@ -1,42 +1,26 @@
 package unit.animal;
 
-import setting.BaseStatsUnit;
+
+import location.Earth;
 import unit.Organizm;
 
-public class Mouse extends Animal{
-    private float satiety;
-    private float hp;
+import java.util.ArrayList;
 
-    public Mouse(){
-        this.satiety = BaseStatsUnit.STATS_BASE_MOUSE.satiety;
-        this.hp = BaseStatsUnit.STATS_BASE_MOUSE.weight;
-    }
+public class Mouse extends Animal implements Herbivore, Predator{
+
 
     @Override
-    public void toEat(Animal organizm) {
+    public void eat(int x, int y, Earth earth) {
 
     }
 
     @Override
     public void move() {
-        super.move();
+
     }
 
-
-
-    public float getSatiety() {
-        return satiety;
-    }
-
-    public void setSatiety(float satiety) {
-        this.satiety = satiety;
-    }
-
-    public float getHp() {
-        return hp;
-    }
-
-    public void setHp(float hp) {
-        this.hp = hp;
+    @Override
+    public Animal multiply() {
+        return new Mouse();
     }
 }

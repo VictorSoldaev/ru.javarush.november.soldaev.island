@@ -1,20 +1,19 @@
 package unit.animal;
 
 
-import servis.TypAnimal;
+import location.Earth;
+import setting.BaseStatsUnit;
 import unit.Organizm;
-
+import java.util.ArrayList;
 
 
 public abstract class Animal extends Organizm {
-    private float satiety;
-    private float hp;
 
-    public abstract void toEat(Animal organizm) throws NoSuchFieldException, IllegalAccessException;
+    public abstract void eat(int x, int y , Earth earth);
 
-    public abstract void move();
+    public abstract void move(int x, int y , Earth earth);
 
-    public abstract TypAnimal multiply();
+    public abstract Animal multiply(int x, int y , Earth earth);
 
 
 

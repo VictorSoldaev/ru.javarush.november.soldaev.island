@@ -1,10 +1,8 @@
 package unit.animal;
 
-
 import servis.TypAnimal;
 import setting.BaseStatsUnit;
 import setting.Setting;
-
 import java.lang.reflect.Field;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -20,24 +18,25 @@ public class Bear extends Animal {
 
     @Override
     public void toEat(Animal organizm) throws NoSuchFieldException, IllegalAccessException {
-        String whoEat = organizm.getClass().getSimpleName();
-        Integer bear = Setting.foodTable.get("Bear").get(whoEat);
-        int i = ThreadLocalRandom.current().nextInt(bear, 101);
+        String foodName = organizm.getClass().getSimpleName();
+        Integer foodTableBearProbability = Setting.foodTable.get("Bear").get(foodName);
+        int probability = ThreadLocalRandom.current().nextInt(foodTableBearProbability, 101);
         Field field = organizm.getClass().getDeclaredField("hp");
         field.setAccessible(true);
-        float s = (float) field.get(organizm);
-        if(i == 100){
-            System.out.println("Медведь скушал " + whoEat);
-            satiety = satiety + s;
+        float satietyPositive = (float) field.get(organizm);
+        if(probability == 100){
+            System.out.println("Медведь скушал " + foodName);
+            satiety = satiety + satietyPositive;
         } else {
-            System.out.println("Медведь не скушал " + whoEat);
+            System.out.println("Медведь не скушал " + foodName);
         }
 
     }
 
+
     @Override
     public void move() {
-        super.move();
+
     }
 
     @Override

@@ -10,21 +10,12 @@ public abstract class Animal extends Organizm {
     private float satiety;
     private float hp;
 
-    public void toEat(Animal organizm) throws NoSuchFieldException, IllegalAccessException {
-        // проверка можно но ли скушать () -> какой шанс подброс кубика
-        // скушал list.remove()
-        // пополнил сытость -> если она выше необходимой то сделать просто полной
+    public abstract void toEat(Animal organizm) throws NoSuchFieldException, IllegalAccessException;
 
-    }
+    public abstract void move();
 
-    public void move(){
-        // проверка есть ли пустое место? -> занять его
-        // если нет поиск ближайших мест на велечину скорости
-    }
+    public abstract TypAnimal multiply();
 
-    public TypAnimal multiply(){
-        return null;
-    }
 
 
 }

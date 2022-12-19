@@ -1,35 +1,29 @@
 package unit.animal;
 
-
 import location.Earth;
+import servis.CoordinateHandler;
 import setting.BaseStatsUnit;
 import unit.Organizm;
-import java.util.ArrayList;
-import java.util.concurrent.ThreadLocalRandom;
 
 
-public abstract class Animal extends Organizm {
+public abstract class Animal extends Organizm implements CoordinateHandler {
     protected final BaseStatsUnit baseStatsUnit;
 
-    protected Animal(BaseStatsUnit baseStatsUnit){
+    protected Animal(BaseStatsUnit baseStatsUnit) {
         this.baseStatsUnit = baseStatsUnit;
     }
 
-    public abstract void eat(int x, int y , Earth earth);
+    public abstract void eat(int x, int y, Earth earth);
 
-    public void move(int x, int y , Earth earth){
+    public void move(int x, int y, Earth earth) {
         for (int i = 0; i < 5; i++) {
-            int xmove = x + ThreadLocalRandom.current().nextInt(0, baseStatsUnit.speed);
-            int ymove = y + ThreadLocalRandom.current().nextInt(0, baseStatsUnit.speed);
-            if (earth.add(this, xmove, ymove)) {
+            if (earth.add(this, getCoordinateX(x, earth, baseStatsUnit.speed), getCoordinateY(y, earth, baseStatsUnit.speed))) {
                 earth.getArrayListAnimals(x, y).remove(this);
                 break;
             }
         }
-    };
+    }
 
-    public abstract Animal multiply(int x, int y , Earth earth);
-
-
+    public abstract Animal multiply(int x, int y, Earth earth);
 
 }

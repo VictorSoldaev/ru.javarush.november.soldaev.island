@@ -1,20 +1,21 @@
 package unit.animal;
 
 import location.Earth;
+import servis.CoordinateHandler;
 import setting.Setting;
 import unit.Organizm;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
-public interface Predator {
+public interface Predator extends CoordinateHandler {
 
     default float hunt(int x, int y, Earth earth) {
-        int counter = 3;
-        int speed = ((Animal)this).baseStatsUnit.speed;
+        int counter = 8;
+        int speed = ((Animal) this).baseStatsUnit.speed;
         for (int i = 0; i < counter; i++) {
-            int xhubt = x + ThreadLocalRandom.current().nextInt(1, speed);
-            int yhubt = y + ThreadLocalRandom.current().nextInt(1, speed);
+            int xhubt = getCoordinateX(x, earth, speed);
+            int yhubt = getCoordinateY(y, earth, speed);
             if (searchFood(earth.getArrayListAnimals(xhubt, yhubt))) {
                 return catchPrey(earth.getArrayListAnimals(xhubt, yhubt));
             }
@@ -24,6 +25,8 @@ public interface Predator {
 
     default boolean searchFood(ArrayList<Organizm> stepFood) {
         if (stepFood.get(0) == null) {
+            return false;
+        } else if (stepFood.get(0).getClass().getSimpleName().equals("Grass")){
             return false;
         } else {
             Class<?>[] interfaces = stepFood.get(0).getClass().getInterfaces();

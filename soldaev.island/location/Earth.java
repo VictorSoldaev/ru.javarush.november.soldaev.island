@@ -1,5 +1,4 @@
 package location;
-
 import unit.Organizm;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,8 +24,9 @@ public class Earth extends Location {
     }
 
     public boolean add(Organizm organizm, int coordinateX, int coordinateY) {
+        System.out.println("По этим координатм:" + "X= " + coordinateX + "  Y= " + coordinateX);
        if (checkAdd(getArrayListAnimals(coordinateX,coordinateY), organizm)) {
-           island.get(coordinateY).get(coordinateY).add(organizm);
+           island.get(coordinateX).get(coordinateY).add(organizm);
            return true;
        } else {
            return false;
@@ -34,11 +34,14 @@ public class Earth extends Location {
     }
 
     public boolean checkAdd(ArrayList<Organizm> animals, Organizm unit) {
-        if (animals.get(0) == null){
+        if (animals.size() == 0){
+            System.out.println("Организ был добавлен " + unit.getClass().getSimpleName());
             return true;
         } else if (animals.get(0).getClass().getSimpleName().equals(unit.getClass().getSimpleName())){
+            System.out.println("Организ был добавлен " + unit.getClass().getSimpleName());
             return true;
         } else {
+            System.out.println("Организ не был добавлен " + unit.getClass().getSimpleName());
             return false;
         }
     }
@@ -50,8 +53,6 @@ public class Earth extends Location {
     public Organizm getOrganizm (int coordinateX, int coordinateY) {
         return island.get(coordinateX).get(coordinateY).get(0);
     }
-
-
 
     public int getMaxSizeIslendX() {
         return maxSizeIslendX;

@@ -7,7 +7,7 @@ public class UnitFactory {
     public UnitFactory() {
     }
 
-    public Organizm create(TypeAnimal type) {
+    public Organizm create(TypeOrganizm type) {
         Organizm organizm = null;
         switch (type) {
             case BEAR:

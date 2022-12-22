@@ -1,21 +1,34 @@
 package servis;
-// In development
-public class Task implements Runnable {
-    int taskNit;
-    World world = new World();
 
-    public Task(int taskNit) {
-        this.taskNit = taskNit;
+import location.Earth;
+import unit.animal.Animal;
+
+public class Task {
+    Earth earth;
+    int x;
+    int y;
+    int z;
+
+    public Task(Earth earth, int x, int y, int z) {
+        this.earth = earth;
+        this.x = x;
+        this.y = y;
+        this.z = z;
     }
 
-    @Override
-    public void run() {
-        try {
-            world.start(taskNit);
-        } catch (NoSuchFieldException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
+    public void taskQueue() {
+        if (earth.getIsland().get(x).get(y).size() != 0) {
+            if (!earth.getIsland().get(x).get(y).get(z).getClass().getSimpleName().equals("Grass")) {
+                Animal animal = (Animal) earth.getIsland().get(x).get(y).get(z);
+                if (earth.getIsland().get(x).get(y).contains(animal)) {
+                    animal.eat(x, y, earth);
+                    if (earth.getIsland().get(x).get(y).contains(animal)) {
+                        animal.move(x, y, earth);
+                        animal.multiply(x, y, earth);
+                    }
+                }
+            }
         }
+
     }
 }

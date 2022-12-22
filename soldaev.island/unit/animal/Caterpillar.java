@@ -17,17 +17,18 @@ public class Caterpillar extends Animal implements Herbivore{
 
     @Override
     public void eat(int x, int y, Earth earth) {
-
     }
 
     @Override
-    public Animal multiply(int x, int y, Earth earth) {
+    public void multiply(int x, int y, Earth earth) {
         if (earth.getArrayListAnimals(x, y).size() > 1) {
-            return new Caterpillar();
+            earth.add(new Caterpillar(), x, y);
         }
-        return null;
     }
 
+    @Override
+    public void move(int x, int y, Earth earth) {
+    }
 
     public float getSatiety() {
         return satiety;

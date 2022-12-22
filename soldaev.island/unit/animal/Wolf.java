@@ -15,15 +15,27 @@ public class Wolf extends Animal implements Predator{
 
     @Override
     public void eat(int x, int y, Earth earth) {
-        satiety = satiety + hunt(x, y, earth) > 0 ? hunt(x, y, earth) : -1;
+        float r = hunt(x, y, earth);
+        if (r == 0) {
+            satiety =(float) (satiety - BaseStatsUnit.STATS_BASE_WOLF.satiety * 0.1);
+            if (satiety <= 0) {
+                hp = (float) (hp - hp * 0.1);
+                if (hp <= 0) {
+                    earth.remove(this, x, y);
+                }
+            }
+        } else if (r > BaseStatsUnit.STATS_BASE_WOLF.satiety){
+            satiety = BaseStatsUnit.STATS_BASE_WOLF.satiety;
+        } else {
+            satiety = satiety + r;
+        }
     }
 
     @Override
-    public Animal multiply(int x, int y, Earth earth) {
+    public void multiply(int x, int y, Earth earth) {
         if (earth.getArrayListAnimals(x, y).size() > 1) {
-            return new Wolf();
+            earth.add(new Wolf(), x, y);
         }
-        return null;
     }
 
 

@@ -7,32 +7,45 @@ import unit.Organizm;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
-public interface Herbivore extends CoordinateHandler {
+public interface Herbivore {
     default float lookingForGrass(int x, int y, Earth earth) {
-        int counter = 8;
-        int speed = ((Animal) this).baseStatsUnit.speed;
-        for (int i = 0; i < counter; i++) {
-            int xG = getCoordinateX(x, earth, speed);
-            int yG = getCoordinateY(y, earth, speed);
-            if (checkGress(earth.getArrayListAnimals(xG, yG))) {
-                return eatGrass(earth.getArrayListAnimals(xG, yG));
+        int lx = 0;
+        int ly = 0;
+        for (int i = -1; i <= 1; i++) {
+            for (int j = -1; j <= 1; j++) {
+                if (i == 0 || j == 0) {
+                    continue;
+                }
+                lx = obrabotchik(x + i, earth.getMaxSizeIslendX(), earth.getMIN_SIZE_ISLEND_X());
+                ly = obrabotchik(y + j, earth.getMaxSizeIslendY(), earth.getMIN_SIZE_ISLEND_Y());
+                if (checkGress(earth.getArrayListAnimals(lx, ly))) {
+                    return eatGrass(earth.getArrayListAnimals(lx, ly), earth, lx, ly);
+                }
             }
+
         }
         return 0;
     }
 
+    default int obrabotchik(int x, int maxSize, int minSize) {
+        if (x == 0) {
+            return maxSize;
+        } else if (x > maxSize) {
+            return minSize;
+        }
+        return x;
+    }
+
     default boolean checkGress(ArrayList<Organizm> stepFood) {
-        if (stepFood.get(0) == null) {
+        if (stepFood.size() == 0) {
             return false;
-        } else {
-            if (stepFood.get(0).getClass().getSimpleName().equals("Grass")) {
-                return true;
-            }
+        } else if (stepFood.get(0).getClass().getSimpleName().equals("Grass")) {
+            return true;
         }
         return false;
     }
 
-    default float eatGrass(ArrayList<Organizm> stepFood) {
+    default float eatGrass(ArrayList<Organizm> stepFood, Earth earth, int lx, int ly) {
         float satietyPositive = 0;
         for (Organizm o :
                 stepFood) {
@@ -40,7 +53,7 @@ public interface Herbivore extends CoordinateHandler {
                 Field field = o.getClass().getDeclaredField("hp");
                 field.setAccessible(true);
                 satietyPositive = satietyPositive + (float) field.get(o);
-                stepFood.remove(o);
+                earth.remove(o, lx, ly);
             } catch (Exception ignor) {
                 System.out.println("Что-то пошло не так");
             }

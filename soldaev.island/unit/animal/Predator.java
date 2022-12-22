@@ -4,29 +4,44 @@ import location.Earth;
 import servis.CoordinateHandler;
 import setting.Setting;
 import unit.Organizm;
+
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
-public interface Predator extends CoordinateHandler {
+public interface Predator {
 
     default float hunt(int x, int y, Earth earth) {
-        int counter = 8;
-        int speed = ((Animal) this).baseStatsUnit.speed;
-        for (int i = 0; i < counter; i++) {
-            int xhubt = getCoordinateX(x, earth, speed);
-            int yhubt = getCoordinateY(y, earth, speed);
-            if (searchFood(earth.getArrayListAnimals(xhubt, yhubt))) {
-                return catchPrey(earth.getArrayListAnimals(xhubt, yhubt));
+        int hx = 0;
+        int hy = 0;
+        for (int i = -1; i <= 1; i++) {
+            for (int j = -1; j <= 1; j++) {
+                if (i == 0 || j == 0) {
+                    continue;
+                }
+                hx = obrabotchik(x + i, earth.getMaxSizeIslendX(), earth.getMIN_SIZE_ISLEND_X());
+                hy = obrabotchik(y + j, earth.getMaxSizeIslendY(), earth.getMIN_SIZE_ISLEND_Y());
+                if (searchFood(earth.getArrayListAnimals(hx, hy))) {
+                    return catchPrey(earth.getArrayListAnimals(hx, hy), earth, hx, hy);
+                }
             }
         }
         return 0;
     }
 
+    default int obrabotchik(int x, int maxSize, int minSize) {
+        if (x == 0) {
+            return maxSize;
+        } else if (x > maxSize) {
+            return minSize;
+        }
+        return x;
+    }
+
     default boolean searchFood(ArrayList<Organizm> stepFood) {
-        if (stepFood.get(0) == null) {
+        if (stepFood.size() == 0) {
             return false;
-        } else if (stepFood.get(0).getClass().getSimpleName().equals("Grass")){
+        } else if (stepFood.get(0).getClass().getSimpleName().equals("Grass")) {
             return false;
         } else {
             Class<?>[] interfaces = stepFood.get(0).getClass().getInterfaces();
@@ -40,7 +55,7 @@ public interface Predator extends CoordinateHandler {
         return false;
     }
 
-    default float catchPrey(ArrayList<Organizm> stepFood) {
+    default float catchPrey(ArrayList<Organizm> stepFood, Earth earth, int hx, int hy) {
         float satietyPositive = 0;
         for (Organizm o :
                 stepFood) {
@@ -49,7 +64,7 @@ public interface Predator extends CoordinateHandler {
                     Field field = o.getClass().getDeclaredField("hp");
                     field.setAccessible(true);
                     satietyPositive = satietyPositive + (float) field.get(o);
-                    stepFood.remove(o);
+                    earth.remove(o, hx, hy);
                 } catch (Exception ignor) {
                     System.out.println("Что-то пошло не так");
                 }

@@ -1,10 +1,17 @@
+import servis.StartWorld;
 import servis.World;
+import setting.BaseStatsUnit;
+import setting.Setting;
 
 public class StarIsLand {
     public static void main(String[] args)  {
-        System.out.println("Начинаем создание мира!");
+        Setting setting = new Setting();
+        BaseStatsUnit baseStatsUnit = new BaseStatsUnit();
         World world = new World();
-        System.out.println("Мир создан!");
+        world.createLife();
+        StartWorld startWorld = new StartWorld(world);
+        startWorld.start();
+
 
     }
 }

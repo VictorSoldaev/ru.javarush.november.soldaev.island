@@ -4,39 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4178b345-fa82-4f91-8982-66d05c48082e" name="Changes" comment="In development мир создаеться, но остались черновики просьба сильно не бить">
+    <list default="true" id="4178b345-fa82-4f91-8982-66d05c48082e" name="Changes" comment="it's alive">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru.javarush.november.soldaev.island.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ru.javarush.november.soldaev.island.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/StarIsLand.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/StarIsLand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/location/Earth.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/location/Earth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/servis/CoordinateHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/servis/CoordinateHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/servis/Fate.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/servis/Random.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/soldaev.island/servis/StartWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/servis/StartWorld.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/soldaev.island/servis/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/servis/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/servis/TypeAnimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/servis/TypeOrganizm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/servis/UnitFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/servis/UnitFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/servis/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/servis/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/setting/Setting.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/setting/Setting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/Organizm.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/Organizm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Animal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Bear.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Bear.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Buffalo.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Buffalo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Caterpillar.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Caterpillar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Deer.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Deer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Duck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Eagle.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Eagle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Fox.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Fox.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Goat.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Goat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Herbivore.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Herbivore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Hog.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Hog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Horse.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Horse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Mouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Mouse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Predator.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Predator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Python.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Python.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Rabbit.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Rabbit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Sheep.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Sheep.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Wolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Wolf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/plant/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/plant/Plant.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -303,11 +288,17 @@
       <option name="project" value="LOCAL" />
       <updated>1671488102129</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="it's alive">
+      <created>1671751081771</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1671751081771</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="методы стали abstract" />
     <MESSAGE value="переименованы именя переменых" />
     <MESSAGE value="создан метод для возвращения организма" />
     <MESSAGE value="методы стали абстрактными" />
@@ -332,7 +323,8 @@
     <MESSAGE value="Убрано закомиченое запускает тест создания мира" />
     <MESSAGE value="In development" />
     <MESSAGE value="In development мир создаеться, но остались черновики просьба сильно не бить" />
-    <option name="LAST_COMMIT_MESSAGE" value="In development мир создаеться, но остались черновики просьба сильно не бить" />
+    <MESSAGE value="it's alive" />
+    <option name="LAST_COMMIT_MESSAGE" value="it's alive" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -343,8 +335,8 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/soldaev.island/servis/StartWorld.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="9" />
+          <line>33</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

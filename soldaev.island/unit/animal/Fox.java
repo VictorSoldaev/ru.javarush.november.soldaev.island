@@ -16,14 +16,14 @@ public class Fox extends Animal implements Predator{
     public void eat(int x, int y, Earth earth) {
         float r = hunt(x, y, earth);
         if (r == 0) {
-            satiety =(float) (satiety - BaseStatsUnit.STATS_BASE_FOX.satiety * 0.1);
+            satiety =(float) (satiety - BaseStatsUnit.STATS_BASE_FOX.satiety * 0.5);
             if (satiety <= 0) {
-                hp = (float) (hp - hp * 0.1);
+                hp = (float) (hp - BaseStatsUnit.STATS_BASE_FOX.weight * 0.5);
                 if (hp <= 0) {
                     earth.remove(this, x, y);
                 }
             }
-        } else if (r > BaseStatsUnit.STATS_BASE_FOX.satiety){
+        } else if (satiety + r > BaseStatsUnit.STATS_BASE_FOX.satiety){
             satiety = BaseStatsUnit.STATS_BASE_FOX.satiety;
         } else {
             satiety = satiety + r;

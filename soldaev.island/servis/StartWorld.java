@@ -3,7 +3,7 @@ package servis;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class StartWorld {
+public class StartWorld extends Thread{
     World world;
     ArrayList<Task> eqTask = new ArrayList<>();
 
@@ -25,7 +25,7 @@ public class StartWorld {
                             if (world.getEarth().getIsland().get(x).get(y).get(z).getClass().getSimpleName().equals("Grass")) {
                                 continue;
                             }
-                            eqTask.add(new Task(world.getEarth(), x, y, z));
+                            eqTask.add(new Task(world.getEarth(), x, y, world.getEarth().getIsland().get(x).get(y).get(z)));
                         }
                     }
                 }
@@ -39,7 +39,11 @@ public class StartWorld {
             System.out.println("Прошел " + dey + " с дня сотворения мира");
             System.out.println(world.getEarth().toString());
             System.out.println("=".repeat(30));
-
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }

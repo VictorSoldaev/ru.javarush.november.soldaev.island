@@ -1,17 +1,15 @@
-import servis.StartWorld;
-import servis.World;
+import servis.StartedNewLife;
+import entities.World;
 import setting.BaseStatsUnit;
 import setting.Setting;
 
 public class StarIsLand {
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
         Setting setting = new Setting();
         BaseStatsUnit baseStatsUnit = new BaseStatsUnit();
         World world = new World();
         world.createLife();
-        StartWorld startWorld = new StartWorld(world);
-        startWorld.start();
-
-
+        StartedNewLife startedNewLife = new StartedNewLife(world.getIslend());
+        startedNewLife.start();
     }
 }

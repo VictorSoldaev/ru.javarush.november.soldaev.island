@@ -1,12 +1,10 @@
-package unit.animal;
+package entities.organism.animal.herbivore;
 
-import location.Earth;
+import entities.location.Island;
 import setting.BaseStatsUnit;
-import unit.Organizm;
+import entities.organism.animal.Animal;
 
-import java.util.ArrayList;
-
-public class Goat extends Animal implements Herbivore{
+public class Goat extends Animal implements Herbivore {
     private float satiety;
     private float hp;
 
@@ -17,17 +15,17 @@ public class Goat extends Animal implements Herbivore{
     }
 
     @Override
-    public void eat(int x, int y, Earth earth) {
-        float r = lookingForGrass(x, y, earth);
+    public void eat(int x, int y, Island island) {
+        float r = lookingForGrass(x, y, island);
         if (r == 0) {
-            satiety =(float) (satiety - BaseStatsUnit.STATS_BASE_GOAT.satiety * 0.5);
+            satiety = (float) (satiety - BaseStatsUnit.STATS_BASE_GOAT.satiety * 0.5);
             if (satiety <= 0) {
                 hp = (float) (hp - BaseStatsUnit.STATS_BASE_GOAT.weight * 0.5);
                 if (hp <= 0) {
-                    earth.remove(this, x, y);
+                    island.removeOrganism(this, x, y);
                 }
             }
-        } else if (satiety + r > BaseStatsUnit.STATS_BASE_GOAT.satiety){
+        } else if (satiety + r > BaseStatsUnit.STATS_BASE_GOAT.satiety) {
             satiety = BaseStatsUnit.STATS_BASE_GOAT.satiety;
         } else {
             satiety = satiety + r;
@@ -35,9 +33,9 @@ public class Goat extends Animal implements Herbivore{
     }
 
     @Override
-    public void multiply(int x, int y, Earth earth) {
-        if (earth.getArrayListAnimals(x, y).size() > 1) {
-            earth.add(new Goat(), x, y);
+    public void multiply(int x, int y, Island island) {
+        if (island.getPopulationOrganisms(x, y).size() > 1) {
+            island.addOrganism(new Goat(), x, y);
         }
     }
 

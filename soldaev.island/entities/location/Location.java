@@ -1,4 +1,4 @@
-package location;
+package entities.location;
 
 public abstract class Location {
 }

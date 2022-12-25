@@ -1,14 +1,14 @@
-package unit.animal;
+package entities.organism.animal.herbivore;
 
-import location.Earth;
-import servis.CoordinateHandler;
-import unit.Organizm;
+import entities.location.Island;
+import util.CoordinateHandler;
+import entities.organism.Organism;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
-public interface Herbivore {
-    default float lookingForGrass(int x, int y, Earth earth) {
+public interface Herbivore extends CoordinateHandler {
+    default float lookingForGrass(int x, int y, Island island) {
         int lx = 0;
         int ly = 0;
         for (int i = -1; i <= 1; i++) {
@@ -16,10 +16,10 @@ public interface Herbivore {
                 if (i == 0 || j == 0) {
                     continue;
                 }
-                lx = obrabotchik(x + i, earth.getMaxSizeIslendX(), earth.getMIN_SIZE_ISLEND_X());
-                ly = obrabotchik(y + j, earth.getMaxSizeIslendY(), earth.getMIN_SIZE_ISLEND_Y());
-                if (checkGress(earth.getArrayListAnimals(lx, ly))) {
-                    return eatGrass(earth.getArrayListAnimals(lx, ly), earth, lx, ly);
+                lx = getCoordinate(x + i, island.getMaxSizeIslandCoordinateX(), island.getMinSizeIslandX());
+                ly = getCoordinate(y + j, island.getMaxSizeIslandCoordinateY(), island.getMinSizeIslandY());
+                if (checkGress(island.getPopulationOrganisms(lx, ly))) {
+                    return eatGrass(island.getPopulationOrganisms(lx, ly), island, lx, ly);
                 }
             }
 
@@ -27,16 +27,8 @@ public interface Herbivore {
         return 0;
     }
 
-    default int obrabotchik(int x, int maxSize, int minSize) {
-        if (x == 0) {
-            return maxSize;
-        } else if (x > maxSize) {
-            return minSize;
-        }
-        return x;
-    }
 
-    default boolean checkGress(ArrayList<Organizm> stepFood) {
+    default boolean checkGress(ArrayList<Organism> stepFood) {
         if (stepFood.size() == 0) {
             return false;
         } else if (stepFood.get(0).getClass().getSimpleName().equals("Grass")) {
@@ -45,15 +37,15 @@ public interface Herbivore {
         return false;
     }
 
-    default float eatGrass(ArrayList<Organizm> stepFood, Earth earth, int lx, int ly) {
+    default float eatGrass(ArrayList<Organism> stepFood, Island island, int lx, int ly) {
         float satietyPositive = 0;
-        for (Organizm o :
+        for (Organism o :
                 stepFood) {
             try {
                 Field field = o.getClass().getDeclaredField("hp");
                 field.setAccessible(true);
                 satietyPositive = satietyPositive + (float) field.get(o);
-                earth.remove(o, lx, ly);
+                island.removeOrganism(o, lx, ly);
             } catch (Exception ignor) {
                 System.out.println("Что-то пошло не так");
             }

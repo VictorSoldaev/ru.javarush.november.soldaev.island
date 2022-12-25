@@ -1,9 +1,9 @@
-package unit.plant;
+package entities.organism.plant;
 
 import setting.BaseStatsUnit;
-import unit.Organizm;
+import entities.organism.Organism;
 
-public abstract class Plant extends Organizm {
+public abstract class Plant extends Organism {
     public BaseStatsUnit getBaseStatsUnit() {
         return baseStatsUnit;
     }

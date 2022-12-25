@@ -1,11 +1,11 @@
-package unit.animal;
+package entities.organism.animal.herbivore;
 
-import location.Earth;
+import entities.location.Island;
 import setting.BaseStatsUnit;
-import java.util.concurrent.ThreadLocalRandom;
+import entities.organism.animal.Animal;
 
 
-public class Caterpillar extends Animal implements Herbivore{
+public class Caterpillar extends Animal implements Herbivore {
     private float satiety;
     private float hp;
 
@@ -16,18 +16,18 @@ public class Caterpillar extends Animal implements Herbivore{
     }
 
     @Override
-    public void eat(int x, int y, Earth earth) {
+    public void eat(int x, int y, Island island) {
     }
 
     @Override
-    public void multiply(int x, int y, Earth earth) {
-        if (earth.getArrayListAnimals(x, y).size() > 1) {
-            earth.add(new Caterpillar(), x, y);
+    public void multiply(int x, int y, Island island) {
+        if (island.getPopulationOrganisms(x, y).size() > 1) {
+            island.addOrganism(new Caterpillar(), x, y);
         }
     }
 
     @Override
-    public void move(int x, int y, Earth earth) {
+    public void move(int x, int y, Island island) {
     }
 
     public float getSatiety() {
@@ -45,4 +45,5 @@ public class Caterpillar extends Animal implements Herbivore{
     public void setHp(float hp) {
         this.hp = hp;
     }
+
 }

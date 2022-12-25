@@ -1,17 +1,17 @@
-package unit.animal;
+package entities.organism.animal.predator;
 
-import location.Earth;
-import servis.CoordinateHandler;
+import entities.location.Island;
+import util.CoordinateHandler;
 import setting.Setting;
-import unit.Organizm;
+import entities.organism.Organism;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
-public interface Predator {
+public interface Predator extends CoordinateHandler {
 
-    default float hunt(int x, int y, Earth earth) {
+    default float hunt(int x, int y, Island island) {
         int hx = 0;
         int hy = 0;
         for (int i = -1; i <= 1; i++) {
@@ -19,26 +19,18 @@ public interface Predator {
                 if (i == 0 || j == 0) {
                     continue;
                 }
-                hx = obrabotchik(x + i, earth.getMaxSizeIslendX(), earth.getMIN_SIZE_ISLEND_X());
-                hy = obrabotchik(y + j, earth.getMaxSizeIslendY(), earth.getMIN_SIZE_ISLEND_Y());
-                if (searchFood(earth.getArrayListAnimals(hx, hy))) {
-                    return catchPrey(earth.getArrayListAnimals(hx, hy), earth, hx, hy);
+                hx = getCoordinate(x + i, island.getMaxSizeIslandCoordinateX(), island.getMinSizeIslandX());
+                hy = getCoordinate(y + j, island.getMaxSizeIslandCoordinateY(), island.getMinSizeIslandY());
+                if (searchFood(island.getPopulationOrganisms(hx, hy))) {
+                    return catchPrey(island.getPopulationOrganisms(hx, hy), island, hx, hy);
                 }
             }
         }
         return 0;
     }
 
-    default int obrabotchik(int x, int maxSize, int minSize) {
-        if (x == 0) {
-            return maxSize;
-        } else if (x > maxSize) {
-            return minSize;
-        }
-        return x;
-    }
 
-    default boolean searchFood(ArrayList<Organizm> stepFood) {
+    default boolean searchFood(ArrayList<Organism> stepFood) {
         if (stepFood.size() == 0) {
             return false;
         } else if (stepFood.get(0).getClass().getSimpleName().equals("Grass")) {
@@ -55,16 +47,16 @@ public interface Predator {
         return false;
     }
 
-    default float catchPrey(ArrayList<Organizm> stepFood, Earth earth, int hx, int hy) {
+    default float catchPrey(ArrayList<Organism> stepFood, Island island, int hx, int hy) {
         float satietyPositive = 0;
-        for (Organizm o :
+        for (Organism o :
                 stepFood) {
             if (checkCatchPrey(o)) {
                 try {
                     Field field = o.getClass().getDeclaredField("hp");
                     field.setAccessible(true);
                     satietyPositive = satietyPositive + (float) field.get(o);
-                    earth.remove(o, hx, hy);
+                    island.removeOrganism(o, hx, hy);
                 } catch (Exception ignor) {
                     System.out.println("Что-то пошло не так");
                 }
@@ -74,8 +66,8 @@ public interface Predator {
         return 0;
     }
 
-    default boolean checkCatchPrey(Organizm organizm) {
-        Integer foodTableBearProbability = Setting.foodTable.get(this.getClass().getSimpleName()).get(organizm.getClass().getSimpleName());
+    default boolean checkCatchPrey(Organism organism) {
+        Integer foodTableBearProbability = Setting.foodTable.get(this.getClass().getSimpleName()).get(organism.getClass().getSimpleName());
         return ThreadLocalRandom.current().nextInt(0, 101) < foodTableBearProbability;
     }
 }

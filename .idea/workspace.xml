@@ -1,11 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="4178b345-fa82-4f91-8982-66d05c48082e" name="Changes" comment="" />
+    <list default="true" id="4178b345-fa82-4f91-8982-66d05c48082e" name="Changes" comment="it's alive">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/servis/StartWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/servis/StartWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/servis/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/servis/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Bear.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Bear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Buffalo.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Buffalo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Deer.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Deer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Duck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Eagle.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Eagle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Fox.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Fox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Goat.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Goat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Hog.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Hog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Horse.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Horse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Mouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Mouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Python.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Python.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Rabbit.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Rabbit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Sheep.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Sheep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Wolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/unit/animal/Wolf.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Enum" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2J2UBdltc75EWIhxAUp33N8WLCu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -13,12 +60,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Java/project_to_modul/ru.javarush.november.soldaev.island&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Java\project_to_modul\ru.javarush.november.soldaev.island\soldaev.island\location" />
+      <recent name="D:\Java\project_to_modul\ru.javarush.november.soldaev.island\soldaev.island\unit\animal" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="servis" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="StarIsLand" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StarIsLand" />
+      <module name="ru.javarush.november.soldaev.island" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.StarIsLand" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -28,6 +99,256 @@
       <option name="presentableId" value="Default" />
       <updated>1671275538322</updated>
     </task>
+    <task id="LOCAL-00001" summary="add .gitignore">
+      <created>1671276447607</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1671276447607</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Первый залив dev">
+      <created>1671304926886</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1671304926886</updated>
+    </task>
+    <task id="LOCAL-00003" summary="переименованы именя переменых">
+      <created>1671364523414</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1671364523414</updated>
+    </task>
+    <task id="LOCAL-00004" summary="создан метод для возвращения организма">
+      <created>1671364605591</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1671364605591</updated>
+    </task>
+    <task id="LOCAL-00005" summary="методы стали абстрактными">
+      <created>1671364636898</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1671364636898</updated>
+    </task>
+    <task id="LOCAL-00006" summary="создан класс судьба">
+      <created>1671364651923</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1671364651923</updated>
+    </task>
+    <task id="LOCAL-00007" summary="добавлены интерфейсы для хищников и травоядных">
+      <created>1671364678424</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1671364678424</updated>
+    </task>
+    <task id="LOCAL-00008" summary="продумываеться работа мира">
+      <created>1671364714418</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1671364714418</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Облены все методы, что они принимают">
+      <created>1671402094547</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1671402094547</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Обновлены методы классов">
+      <created>1671402179742</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1671402179742</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Обновлены методы: охоты, поиска, поимки добычи">
+      <created>1671402264887</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1671402264888</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Обновлены методы">
+      <created>1671402280766</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1671402280766</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Изменено первичное население мира по дефолту и создание мира">
+      <created>1671402354969</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1671402354969</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Вроде не менялось">
+      <created>1671402407229</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1671402407229</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Ура я понял, что значит мультитон и super =(">
+      <created>1671406040319</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1671406040319</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Обновлен класс добавлена имплементация нового класса CoordinateHandler">
+      <created>1671487469665</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1671487469665</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Создан вспомогательный интерфейс который обрабатывает координаты и позволяет животным двигаться без ограничений мир это сфера!">
+      <created>1671487584690</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1671487584690</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Испрвлен метод add мир населялся только по координатам Y также добавлены prints для вывола информации и проверки работы метода в дальнейшем prints будут убраны">
+      <created>1671487697232</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1671487697232</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Добавлен конструктор с базовыми характеристиками">
+      <created>1671487734339</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1671487734339</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Интерфейс травоялные проработа теперь травоядные могут шипать трафку">
+      <created>1671487813863</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1671487813863</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Просто убрал пустую строку">
+      <created>1671487841659</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1671487841659</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Добавлен конструктор базовых характеристик">
+      <created>1671487876875</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1671487876875</updated>
+    </task>
+    <task id="LOCAL-00023" summary="метод наследует CoordinateHandler планируеться убрать и сделать охоту только вокруг хищника">
+      <created>1671487970754</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1671487970754</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Убрано закомиченое запускает тест создания мира">
+      <created>1671488018133</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1671488018133</updated>
+    </task>
+    <task id="LOCAL-00025" summary="In development">
+      <created>1671488037096</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1671488037096</updated>
+    </task>
+    <task id="LOCAL-00026" summary="In development">
+      <created>1671488048737</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1671488048737</updated>
+    </task>
+    <task id="LOCAL-00027" summary="In development мир создаеться, но остались черновики просьба сильно не бить">
+      <created>1671488102129</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1671488102129</updated>
+    </task>
+    <task id="LOCAL-00028" summary="it's alive">
+      <created>1671751081771</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1671751081771</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="переименованы именя переменых" />
+    <MESSAGE value="создан метод для возвращения организма" />
+    <MESSAGE value="методы стали абстрактными" />
+    <MESSAGE value="создан класс судьба" />
+    <MESSAGE value="добавлены интерфейсы для хищников и травоядных" />
+    <MESSAGE value="продумываеться работа мира" />
+    <MESSAGE value="Облены все методы, что они принимают" />
+    <MESSAGE value="Обновлены методы классов" />
+    <MESSAGE value="Обновлены методы: охоты, поиска, поимки добычи" />
+    <MESSAGE value="Обновлены методы" />
+    <MESSAGE value="Изменено первичное население мира по дефолту и создание мира" />
+    <MESSAGE value="Вроде не менялось" />
+    <MESSAGE value="Ура я понял, что значит мультитон и super =(" />
+    <MESSAGE value="Обновлен класс добавлена имплементация нового класса CoordinateHandler" />
+    <MESSAGE value="Создан вспомогательный интерфейс который обрабатывает координаты и позволяет животным двигаться без ограничений мир это сфера!" />
+    <MESSAGE value="Испрвлен метод add мир населялся только по координатам Y также добавлены prints для вывола информации и проверки работы метода в дальнейшем prints будут убраны" />
+    <MESSAGE value="Добавлен конструктор с базовыми характеристиками" />
+    <MESSAGE value="Интерфейс травоялные проработа теперь травоядные могут шипать трафку" />
+    <MESSAGE value="Просто убрал пустую строку" />
+    <MESSAGE value="Добавлен конструктор базовых характеристик" />
+    <MESSAGE value="метод наследует CoordinateHandler планируеться убрать и сделать охоту только вокруг хищника" />
+    <MESSAGE value="Убрано закомиченое запускает тест создания мира" />
+    <MESSAGE value="In development" />
+    <MESSAGE value="In development мир создаеться, но остались черновики просьба сильно не бить" />
+    <MESSAGE value="it's alive" />
+    <option name="LAST_COMMIT_MESSAGE" value="it's alive" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/soldaev.island/servis/StartWorld.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="location.Earth" memberName="island" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="world.earth.island.entrySet().toArray()[6]" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

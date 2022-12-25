@@ -1,33 +1,33 @@
 package servis;
 
-import location.Earth;
-import unit.Organizm;
-import unit.animal.Animal;
+import entities.location.Island;
+import entities.organism.Organism;
+import entities.organism.animal.Animal;
 
 public class Task {
-    Earth earth;
+    Island island;
     int x;
     int y;
-    Organizm organizm;
+    Organism organism;
 
-    public Task(Earth earth, int x, int y, Organizm unit) {
-        this.earth = earth;
+    public Task(Island island, int x, int y, Organism unit) {
+        this.island = island;
         this.x = x;
         this.y = y;
-        this.organizm = unit;
+        this.organism = unit;
     }
 
     public void taskQueue() {
-        if (earth.getIsland().get(x).get(y).contains(organizm)) {
-            Animal animal = (Animal) organizm;
-            animal.eat(x, y, earth);
-            if (earth.getIsland().get(x).get(y).contains(animal)) {
-                animal.move(x, y, earth);
-                animal.multiply(x, y, earth);
+        if (island.getIsland().get(x).get(y).contains(organism)) {
+            Animal animal = (Animal) organism;
+            animal.eat(x, y, island);
+            if (island.getIsland().get(x).get(y).contains(animal)) {
+                animal.multiply(x, y, island);
+                animal.move(x, y, island);
+
             }
-
-
         }
-
     }
+
 }
+

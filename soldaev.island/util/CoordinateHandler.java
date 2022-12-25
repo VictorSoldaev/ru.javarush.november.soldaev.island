@@ -1,4 +1,4 @@
-package servis;
+package util;
 
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -11,6 +11,14 @@ public interface CoordinateHandler {
             return minSize + coor - maxSize;
         }
         return coor;
+    }
+    default int getCoordinate(int x, int maxSize, int minSize) {
+        if (x == 0) {
+            return maxSize;
+        } else if (x > maxSize) {
+            return minSize;
+        }
+        return x;
     }
 
 }

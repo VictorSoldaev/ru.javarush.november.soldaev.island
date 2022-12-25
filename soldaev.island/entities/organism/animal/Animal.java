@@ -5,7 +5,6 @@ import util.CoordinateHandler;
 import setting.BaseStatsUnit;
 import entities.organism.Organism;
 
-
 public abstract class Animal extends Organism implements CoordinateHandler {
     public BaseStatsUnit getBaseStatsUnit() {
         return baseStatsUnit;

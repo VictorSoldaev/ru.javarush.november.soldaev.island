@@ -1,5 +1,6 @@
 package setting;
 
+
 import java.util.HashMap;
 
 public class Setting {

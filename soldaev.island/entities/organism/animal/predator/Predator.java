@@ -9,6 +9,7 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
+
 public interface Predator extends CoordinateHandler {
 
     default float hunt(int x, int y, Island island) {

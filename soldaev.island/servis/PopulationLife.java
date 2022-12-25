@@ -8,8 +8,7 @@ import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedDeque;
 
 public class PopulationLife implements Runnable {
-    ArrayList<Organism> organisms;
-
+    private ArrayList<Organism> organisms;
     private Island island;
     private int x;
     private int y;

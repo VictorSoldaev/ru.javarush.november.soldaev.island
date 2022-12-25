@@ -4,6 +4,7 @@ import entities.organism.Organism;
 import entities.organism.animal.herbivore.*;
 import entities.organism.animal.predator.*;
 
+
 public class OrganismFactory {
     public OrganismFactory() {
     }

@@ -5,10 +5,10 @@ import entities.organism.Organism;
 import entities.organism.animal.Animal;
 
 public class Task {
-    Island island;
-    int x;
-    int y;
-    Organism organism;
+    private Island island;
+    private int x;
+    private int y;
+    private Organism organism;
 
     public Task(Island island, int x, int y, Organism unit) {
         this.island = island;

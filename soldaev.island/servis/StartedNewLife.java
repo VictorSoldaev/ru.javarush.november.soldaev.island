@@ -10,7 +10,6 @@ public class StartedNewLife extends Thread {
     private final Island island;
     private volatile int day;
     private ArrayList<PopulationLife> populationOrganism = new ArrayList<>();
-
     public StartedNewLife(Island island) {
         this.island = island;
     }

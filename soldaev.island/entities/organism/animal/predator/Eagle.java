@@ -7,7 +7,6 @@ import entities.organism.animal.Animal;
 
 import java.util.ArrayList;
 
-
 public class Eagle extends Animal implements Predator {
     private float satiety;
     private float hp;

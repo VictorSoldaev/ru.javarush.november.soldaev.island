@@ -8,6 +8,7 @@ import entities.organism.animal.predator.Predator;
 
 import java.util.ArrayList;
 
+
 public class Duck extends Animal implements Herbivore, Predator {
     private float satiety;
     private float hp;

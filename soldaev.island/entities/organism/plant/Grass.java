@@ -2,6 +2,7 @@ package entities.organism.plant;
 
 import setting.BaseStatsUnit;
 
+
 public class Grass extends Plant {
     private float hp;
 

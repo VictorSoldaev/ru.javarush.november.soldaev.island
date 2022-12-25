@@ -7,6 +7,7 @@ import entities.organism.Organism;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
+
 public interface Herbivore extends CoordinateHandler {
     default float lookingForGrass(int x, int y, Island island) {
         int lx = 0;

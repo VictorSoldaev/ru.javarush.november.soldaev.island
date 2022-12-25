@@ -6,5 +6,4 @@ public enum TypePredator {
     PYTHON,
     EAGLE,
     FOX;
-
 }

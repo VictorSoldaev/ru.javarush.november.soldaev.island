@@ -4,6 +4,7 @@ import entities.location.Island;
 import setting.BaseStatsUnit;
 import entities.organism.animal.Animal;
 
+
 public class Deer extends Animal implements Herbivore {
     private float satiety;
     private float hp;

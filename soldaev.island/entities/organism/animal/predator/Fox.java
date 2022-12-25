@@ -4,6 +4,7 @@ import entities.location.Island;
 import setting.BaseStatsUnit;
 import entities.organism.animal.Animal;
 
+
 public class Fox extends Animal implements Predator {
     private float satiety;
     private float hp;

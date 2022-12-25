@@ -7,7 +7,6 @@ import entities.location.Island;
 import entities.organism.plant.Grass;
 import util.Random;
 
-
 public class World implements Random {
     private OrganismFactory factory = new OrganismFactory();
 

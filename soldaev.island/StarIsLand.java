@@ -3,6 +3,7 @@ import entities.World;
 import setting.BaseStatsUnit;
 import setting.Setting;
 
+
 public class StarIsLand {
     public static void main(String[] args) {
         Setting setting = new Setting();

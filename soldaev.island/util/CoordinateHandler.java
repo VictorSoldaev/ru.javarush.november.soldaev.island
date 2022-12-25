@@ -2,6 +2,7 @@ package util;
 
 import java.util.concurrent.ThreadLocalRandom;
 
+
 public interface CoordinateHandler {
     default int getCoordinate(int coordinate, int maxSize, int minSize , int step) {
         int coor = coordinate + ThreadLocalRandom.current().nextInt(-step, step);

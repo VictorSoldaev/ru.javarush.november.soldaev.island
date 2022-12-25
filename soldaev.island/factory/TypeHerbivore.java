@@ -11,5 +11,4 @@ public enum TypeHerbivore {
     GOAT,
     HOG,
     SHEEP;
-
 }

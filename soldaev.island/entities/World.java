@@ -39,7 +39,6 @@ public class World implements Random {
     }
 
     public void createLife(int numberOfPredator, int numberOfHerbivore, int numberOfGrass) {
-        System.out.println("Населяем мир");
         createPredator(numberOfPredator, random(0, TypePredator.values().length));
         createHerbivore(numberOfHerbivore, random(0, TypeHerbivore.values().length));
         createPlants(numberOfGrass);

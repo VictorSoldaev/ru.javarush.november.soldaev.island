@@ -10,8 +10,15 @@ public class StartedNewLife extends Thread {
     private final Island island;
     private volatile int day;
     private ArrayList<PopulationLife> populationOrganism = new ArrayList<>();
+    int time;
     public StartedNewLife(Island island) {
         this.island = island;
+        this.time = 100000;
+    }
+
+    public StartedNewLife(Island island, int time) {
+        this.island = island;
+        this.time = time;
     }
 
     @Override
@@ -21,9 +28,8 @@ public class StartedNewLife extends Thread {
         ScheduledExecutorService service = new ScheduledThreadPoolExecutor(2) {
         };
         service.scheduleAtFixedRate(this::metodDlyaZopuska, 0, 2, TimeUnit.SECONDS);
-
         try {
-            Thread.sleep(100000);
+            Thread.sleep(time);
             service.shutdown();
         } catch (Exception e) {
             System.out.println("Сломалось");
@@ -41,20 +47,15 @@ public class StartedNewLife extends Thread {
                 }
             }
         }
-
         ExecutorService executorService = Executors.newFixedThreadPool(1);
         for (PopulationLife l :
                 populationOrganism) {
             executorService.submit(l);
         }
-
         executorService.shutdown();
         populationOrganism.clear();
-        System.out.println("Прошел " + day + "с сотворения мира");
+        System.out.println(day + "days have passed since the creation of the world");
         System.out.println(island);
         System.out.println("=".repeat(30));
-
     }
-
-
 }

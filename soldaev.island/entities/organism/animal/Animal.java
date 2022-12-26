@@ -30,4 +30,5 @@ public abstract class Animal extends Organism implements CoordinateHandler {
 
     public abstract void multiply(int x, int y, Island island);
 
+    public abstract void oldAge(int x, int y, Island island);
 }

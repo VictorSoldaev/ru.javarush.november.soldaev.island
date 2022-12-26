@@ -17,7 +17,7 @@ public class Visual {
     private final String Herbivores = "Herbivores: ";
     private final String Predators = "Predators: ";
     private final String Plant = "Plant: ";
-    private final String timeline = "The life time of the world: ";
+    private final String timeline = "The lifetime of the world in seconds: ";
     private final String invalidinput = "invalid input";
     private final String x = "Enter the length of the world";
     private final String y = "Enter the width of the world";
@@ -49,7 +49,6 @@ public class Visual {
     private void createWorldParameters() {
         print(enterthequantity);
         print(Predators);
-        String r = scanner.nextLine();
         int predators = scanner.nextInt();
         print(Herbivores);
         int herbivores = scanner.nextInt();
@@ -63,14 +62,14 @@ public class Visual {
         int y = scanner.nextInt();
         world = new World(x, y);
         world.createLife(predators, herbivores, plant);
-        startedNewLife = new StartedNewLife(world.getIslend(), timline);
+        startedNewLife = new StartedNewLife(world, timline * 1000);
         startedNewLife.start();
     }
 
     private void createWorldParametersDefoliate() {
         world = new World();
         world.createLife();
-        startedNewLife = new StartedNewLife(world.getIslend());
+        startedNewLife = new StartedNewLife(world);
         startedNewLife.start();
     }
 

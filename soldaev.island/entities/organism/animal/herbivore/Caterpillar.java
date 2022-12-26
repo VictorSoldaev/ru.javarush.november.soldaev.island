@@ -29,6 +29,13 @@ public class Caterpillar extends Animal implements Herbivore {
     public void move(int x, int y, Island island) {
     }
 
+    public void oldAge(int x, int y, Island island) {
+        hp = (float) (hp - BaseStatsUnit.STATS_BASE_CATERPILLAR.weight * 0.1);
+        if (hp <= 0) {
+            island.removeOrganism(this, x, y);
+        }
+    }
+
     public float getSatiety() {
         return satiety;
     }

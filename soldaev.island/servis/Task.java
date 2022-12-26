@@ -24,6 +24,7 @@ public class Task {
             if (island.getIsland().get(x).get(y).contains(animal)) {
                 animal.multiply(x, y, island);
                 animal.move(x, y, island);
+                animal.oldAge(x, y, island);
 
             }
         }

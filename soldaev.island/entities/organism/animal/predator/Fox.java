@@ -21,7 +21,7 @@ public class Fox extends Animal implements Predator {
         if (r == 0) {
             satiety = (float) (satiety - BaseStatsUnit.STATS_BASE_FOX.satiety * 0.2);
             if (satiety <= 0) {
-                hp = (float) (hp - BaseStatsUnit.STATS_BASE_FOX.weight * 0.5);
+                hp = (float) (hp - BaseStatsUnit.STATS_BASE_FOX.weight * 0.3);
                 if (hp <= 0) {
                     island.removeOrganism(this, x, y);
                 }
@@ -39,7 +39,12 @@ public class Fox extends Animal implements Predator {
             island.addOrganism(new Fox(), x, y);
         }
     }
-
+    public void oldAge(int x, int y, Island island) {
+        hp = (float) (hp - BaseStatsUnit.STATS_BASE_FOX.weight * 0.2);
+        if (hp <= 0) {
+            island.removeOrganism(this, x, y);
+        }
+    }
 
     public float getSatiety() {
         return satiety;

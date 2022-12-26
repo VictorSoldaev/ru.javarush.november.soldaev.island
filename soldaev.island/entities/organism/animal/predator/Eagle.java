@@ -43,7 +43,7 @@ public class Eagle extends Animal implements Predator {
         if (r == 0) {
             satiety = (float) (satiety - BaseStatsUnit.STATS_BASE_EAGLE.satiety * 0.2);
             if (satiety <= 0) {
-                hp = (float) (hp - BaseStatsUnit.STATS_BASE_EAGLE.weight * 0.5);
+                hp = (float) (hp - BaseStatsUnit.STATS_BASE_EAGLE.weight * 0.3);
                 if (hp <= 0) {
                     island.removeOrganism(this, x, y);
                 }
@@ -61,7 +61,12 @@ public class Eagle extends Animal implements Predator {
             island.addOrganism(new Eagle(), x, y);
         }
     }
-
+    public void oldAge(int x, int y, Island island) {
+        hp = (float) (hp - BaseStatsUnit.STATS_BASE_EAGLE.weight * 0.2);
+        if (hp <= 0) {
+            island.removeOrganism(this, x, y);
+        }
+    }
 
     public float getSatiety() {
         return satiety;

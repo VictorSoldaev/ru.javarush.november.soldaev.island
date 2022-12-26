@@ -40,7 +40,7 @@ public class Hog extends Animal implements Herbivore, Predator {
         if (r == 0) {
             satiety = (float) (satiety - BaseStatsUnit.STATS_BASE_HOG.satiety * 0.5);
             if (satiety <= 0) {
-                hp = (float) (hp - BaseStatsUnit.STATS_BASE_HOG.weight * 0.5);
+                hp = (float) (hp - BaseStatsUnit.STATS_BASE_HOG.weight * 0.3);
                 if (hp <= 0) {
                     island.removeOrganism(this, x, y);
                 }
@@ -58,7 +58,12 @@ public class Hog extends Animal implements Herbivore, Predator {
             island.addOrganism(new Hog(), x, y);
         }
     }
-
+    public void oldAge(int x, int y, Island island) {
+        hp = (float) (hp - BaseStatsUnit.STATS_BASE_HOG.weight * 0.2);
+        if (hp <= 0) {
+            island.removeOrganism(this, x, y);
+        }
+    }
 
     public float getSatiety() {
         return satiety;

@@ -20,7 +20,7 @@ public class Horse extends Animal implements Herbivore {
         if (r == 0) {
             satiety = (float) (satiety - BaseStatsUnit.STATS_BASE_HORSE.satiety * 0.5);
             if (satiety <= 0) {
-                hp = (float) (hp - BaseStatsUnit.STATS_BASE_HORSE.weight * 0.5);
+                hp = (float) (hp - BaseStatsUnit.STATS_BASE_HORSE.weight * 0.3);
                 if (hp <= 0) {
                     island.removeOrganism(this, x, y);
                 }
@@ -36,6 +36,13 @@ public class Horse extends Animal implements Herbivore {
     public void multiply(int x, int y, Island island) {
         if (island.getPopulationOrganisms(x, y).size() > 1) {
             island.addOrganism(new Horse(), x, y);
+        }
+    }
+
+    public void oldAge(int x, int y, Island island) {
+        hp = (float) (hp - BaseStatsUnit.STATS_BASE_HORSE.weight * 0.2);
+        if (hp <= 0) {
+            island.removeOrganism(this, x, y);
         }
     }
 

@@ -3,22 +3,22 @@ package entities;
 import factory.OrganismFactory;
 import factory.TypeHerbivore;
 import factory.TypePredator;
-import entities.location.Island;
+import entities.location.*;
 import entities.organism.plant.Grass;
 import util.Random;
 
 public class World implements Random {
     private OrganismFactory factory = new OrganismFactory();
 
-    private Island island;
+    private Location island;
 
     public World() {
-        this.island = new Island(20, 20);
+        this.island = new Location(20, 20);
 
     }
 
     public World(int maxSizeIslendLength, int maxSizeIslendWidth) {
-        this.island = new Island(maxSizeIslendLength, maxSizeIslendWidth);
+        this.island = new Location(maxSizeIslendLength, maxSizeIslendWidth);
     }
 
     public void createLife() {
@@ -71,7 +71,7 @@ public class World implements Random {
         }
     }
 
-    public Island getIslend() {
+    public Location getLocation() {
         return island;
     }
 

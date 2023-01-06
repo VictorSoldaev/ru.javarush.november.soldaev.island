@@ -1,7 +1,7 @@
 package entities.organism.animal.predator;
 
 
-import entities.location.Island;
+import entities.location.Location;
 import setting.BaseStatsUnit;
 import entities.organism.Organism;
 import entities.organism.animal.Animal;
@@ -40,34 +40,50 @@ public class Python extends Animal implements Predator {
     }
 
     @Override
-    public void eat(int x, int y, Island island) {
-        float r = hunt(x, y, island);
-        if (r == 0) {
-            satiety = (float) (satiety - BaseStatsUnit.STATS_BASE_PYTHON.satiety * 0.2);
-            if (satiety <= 0) {
-                hp = (float) (hp - BaseStatsUnit.STATS_BASE_PYTHON.weight * 0.3);
-                if (hp <= 0) {
-                    island.removeOrganism(this, x, y);
+    public void eat(int x, int y, Location island) {
+        island.getLock().lock();
+        try {
+            float r = hunt(x, y, island);
+            if (r == 0) {
+                satiety = (float) (satiety - BaseStatsUnit.STATS_BASE_PYTHON.satiety * 0.2);
+                if (satiety <= 0) {
+                    hp = (float) (hp - BaseStatsUnit.STATS_BASE_PYTHON.weight * 0.3);
+                    if (hp <= 0) {
+                        island.removeOrganism(this, x, y);
 
+                    }
                 }
+            } else if (satiety + r > BaseStatsUnit.STATS_BASE_PYTHON.satiety) {
+                satiety = BaseStatsUnit.STATS_BASE_PYTHON.satiety;
+            } else {
+                satiety = satiety + r;
             }
-        } else if (satiety + r > BaseStatsUnit.STATS_BASE_PYTHON.satiety) {
-            satiety = BaseStatsUnit.STATS_BASE_PYTHON.satiety;
-        } else {
-            satiety = satiety + r;
+        } finally {
+            island.getLock().unlock();
         }
     }
 
     @Override
-    public void multiply(int x, int y, Island island) {
-        if (island.getPopulationOrganisms(x, y).size() > 1) {
-            island.addOrganism(new Python(), x, y);
+    public void multiply(int x, int y, Location island) {
+        island.getLock().lock();
+        try {
+            if (island.getPopulationOrganisms(x, y).size() > 1) {
+                island.addOrganism(new Python(), x, y);
+            }
+        } finally {
+            island.getLock().unlock();
         }
     }
-    public void oldAge(int x, int y, Island island) {
-        hp = (float) (hp - BaseStatsUnit.STATS_BASE_PYTHON.weight * 0.2);
-        if (hp <= 0) {
-            island.removeOrganism(this, x, y);
+
+    public void oldAge(int x, int y, Location island) {
+        island.getLock().lock();
+        try {
+            hp = (float) (hp - BaseStatsUnit.STATS_BASE_PYTHON.weight * 0.2);
+            if (hp <= 0) {
+                island.removeOrganism(this, x, y);
+            }
+        } finally {
+            island.getLock().unlock();
         }
     }
 

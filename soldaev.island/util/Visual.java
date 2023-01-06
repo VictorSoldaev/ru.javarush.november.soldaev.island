@@ -1,7 +1,7 @@
 package util;
 
 import entities.World;
-import servis.StartedNewLife;
+import service.StartedNewLife;
 import setting.BaseStatsUnit;
 import setting.Setting;
 

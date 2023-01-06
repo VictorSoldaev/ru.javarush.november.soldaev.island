@@ -1,27 +1,27 @@
-package servis;
+package service;
 
 import entities.World;
-import entities.location.Island;
+import entities.location.Location;
 
 import java.util.ArrayList;
 import java.util.concurrent.*;
 
 public class StartedNewLife extends Thread {
 
-    private final Island island;
+    private final Location island;
     private World world;
     private volatile int day;
     private ArrayList<PopulationLife> populationOrganism = new ArrayList<>();
     int time;
     public StartedNewLife(World world) {
         this.world = world;
-        this.island = world.getIslend();
+        this.island = world.getLocation();
         this.time = 100000;
     }
 
     public StartedNewLife(World world, int time) {
         this.world = world;
-        this.island = world.getIslend();
+        this.island = world.getLocation();
         this.time = time;
     }
 

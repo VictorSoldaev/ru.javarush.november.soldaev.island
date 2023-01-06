@@ -1,16 +1,16 @@
-package servis;
+package service;
 
-import entities.location.Island;
+import entities.location.Location;
 import entities.organism.Organism;
 import entities.organism.animal.Animal;
 
 public class Task {
-    private Island island;
+    private Location island;
     private int x;
     private int y;
     private Organism organism;
 
-    public Task(Island island, int x, int y, Organism unit) {
+    public Task(Location island, int x, int y, Organism unit) {
         this.island = island;
         this.x = x;
         this.y = y;

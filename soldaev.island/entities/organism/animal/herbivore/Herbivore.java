@@ -1,6 +1,6 @@
 package entities.organism.animal.herbivore;
 
-import entities.location.Island;
+import entities.location.Location;
 import util.CoordinateHandler;
 import entities.organism.Organism;
 
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 
 public interface Herbivore extends CoordinateHandler {
-    default float lookingForGrass(int x, int y, Island island) {
+    default float lookingForGrass(int x, int y, Location island) {
         int lx = 0;
         int ly = 0;
         for (int i = -1; i <= 1; i++) {
@@ -38,7 +38,7 @@ public interface Herbivore extends CoordinateHandler {
         return false;
     }
 
-    default float eatGrass(ArrayList<Organism> stepFood, Island island, int lx, int ly) {
+    default float eatGrass(ArrayList<Organism> stepFood, Location island, int lx, int ly) {
         float satietyPositive = 0;
         for (Organism o :
                 stepFood) {

@@ -1,6 +1,6 @@
 package entities.organism.animal.predator;
 
-import entities.location.Island;
+import entities.location.Location;
 import util.CoordinateHandler;
 import setting.Setting;
 import entities.organism.Organism;
@@ -12,7 +12,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public interface Predator extends CoordinateHandler {
 
-    default float hunt(int x, int y, Island island) {
+    default float hunt(int x, int y, Location island) {
         int hx = 0;
         int hy = 0;
         for (int i = -1; i <= 1; i++) {
@@ -48,7 +48,7 @@ public interface Predator extends CoordinateHandler {
         return false;
     }
 
-    default float catchPrey(ArrayList<Organism> stepFood, Island island, int hx, int hy) {
+    default float catchPrey(ArrayList<Organism> stepFood, Location island, int hx, int hy) {
         float satietyPositive = 0;
         for (Organism o :
                 stepFood) {

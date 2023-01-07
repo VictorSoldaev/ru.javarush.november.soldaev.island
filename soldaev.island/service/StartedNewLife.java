@@ -2,43 +2,40 @@ package service;
 
 import entities.World;
 import entities.location.Location;
-
 import java.util.ArrayList;
 import java.util.concurrent.*;
 
 public class StartedNewLife extends Thread {
 
     private final Location island;
-    private World world;
-    private volatile int day;
+    private final World world;
+    private int day;
     private ArrayList<PopulationLife> populationOrganism = new ArrayList<>();
-    int time;
+
+
     public StartedNewLife(World world) {
         this.world = world;
         this.island = world.getLocation();
-        this.time = 100000;
     }
 
-    public StartedNewLife(World world, int time) {
-        this.world = world;
-        this.island = world.getLocation();
-        this.time = time;
-    }
+//    public StartedNewLife(World world, int lifeTime) {
+//        this.world = world;
+//        this.island = world.getLocation();
+//    }
 
     @Override
     public void run() {
-        System.out.println(island.toString());
-        System.out.println("=".repeat(30));
-        ScheduledExecutorService service = new ScheduledThreadPoolExecutor(2) {
-        };
-        service.scheduleAtFixedRate(this::startWorldLife, 0, 2, TimeUnit.SECONDS);
+        System.out.println("Initial world population \n" + island.toString());
+        System.out.println("=".repeat(100));
+        ScheduledExecutorService launchingLifeStreams = Executors.newScheduledThreadPool(4);
+        launchingLifeStreams.scheduleWithFixedDelay(this::startWorldLife, 0, 1, TimeUnit.SECONDS);
         try {
-            Thread.sleep(time);
-            service.shutdown();
+            Thread.sleep(world.getLifeTime());
+            launchingLifeStreams.shutdown();
         } catch (Exception e) {
-            System.out.println("Сломалось");
+            System.out.println("end");
         }
-
+        System.out.println("end");
     }
 
     private void startWorldLife() {
@@ -51,16 +48,16 @@ public class StartedNewLife extends Thread {
                 }
             }
         }
-        ExecutorService executorService = Executors.newFixedThreadPool(1);
-        for (PopulationLife l :
+        ExecutorService startingTheLifeOfOrganisms = Executors.newFixedThreadPool(4);
+        for (PopulationLife lifeOrganism :
                 populationOrganism) {
-            executorService.submit(l);
+            startingTheLifeOfOrganisms.submit(lifeOrganism);
         }
-        executorService.shutdown();
+        startingTheLifeOfOrganisms.shutdown();
         populationOrganism.clear();
         world.createPlants(100);
         System.out.println(day + " days have passed since the creation of the world");
         System.out.println(island);
-        System.out.println("=".repeat(30));
+        System.out.println("=".repeat(100));
     }
 }

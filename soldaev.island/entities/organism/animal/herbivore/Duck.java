@@ -1,22 +1,20 @@
 package entities.organism.animal.herbivore;
 
 import entities.location.Location;
-import setting.BaseStatsUnit;
 import entities.organism.Organism;
 import entities.organism.animal.Animal;
 import entities.organism.animal.predator.Predator;
+import setting.Setting;
 
 import java.util.ArrayList;
-
 
 public class Duck extends Animal implements Herbivore, Predator {
     private float satiety;
     private float hp;
 
     public Duck() {
-        super(BaseStatsUnit.STATS_BASE_DUCK);
-        this.satiety = BaseStatsUnit.STATS_BASE_DUCK.satiety;
-        this.hp = BaseStatsUnit.STATS_BASE_DUCK.weight;
+        this.satiety = Setting.statsUnit.get(this.getClass().getSimpleName()).getSatiety();
+        this.hp = Setting.statsUnit.get(this.getClass().getSimpleName()).getWeight();
     }
 
     @Override
@@ -35,15 +33,15 @@ public class Duck extends Animal implements Herbivore, Predator {
                 r = hunt(x, y, island);
             }
             if (r == 0) {
-                satiety = (float) (satiety - BaseStatsUnit.STATS_BASE_DUCK.satiety * 0.5);
+                satiety = (float) (satiety - Setting.statsUnit.get(this.getClass().getSimpleName()).getSatiety() * 0.5);
                 if (satiety <= 0) {
-                    hp = (float) (hp - BaseStatsUnit.STATS_BASE_DUCK.weight * 0.3);
+                    hp = (float) (hp - Setting.statsUnit.get(this.getClass().getSimpleName()).getWeight() * 0.3);
                     if (hp <= 0) {
                         island.removeOrganism(this, x, y);
                     }
                 }
-            } else if (satiety + r > BaseStatsUnit.STATS_BASE_DUCK.satiety) {
-                satiety = BaseStatsUnit.STATS_BASE_DUCK.satiety;
+            } else if (satiety + r > Setting.statsUnit.get(this.getClass().getSimpleName()).getSatiety()) {
+                satiety = Setting.statsUnit.get(this.getClass().getSimpleName()).getSatiety();
             } else {
                 satiety = satiety + r;
             }
@@ -67,7 +65,7 @@ public class Duck extends Animal implements Herbivore, Predator {
     public void oldAge(int x, int y, Location island) {
         island.getLock().lock();
         try {
-            hp = (float) (hp - BaseStatsUnit.STATS_BASE_DUCK.weight * 0.2);
+            hp = (float) (hp - Setting.statsUnit.get(this.getClass().getSimpleName()).getWeight() * 0.2);
             if (hp <= 0) {
                 island.removeOrganism(this, x, y);
             }

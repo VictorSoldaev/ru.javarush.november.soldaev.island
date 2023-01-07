@@ -1,16 +1,15 @@
 package entities.organism.animal.predator;
 import entities.location.Location;
-import setting.BaseStatsUnit;
 import entities.organism.animal.Animal;
+import setting.Setting;
 
 public class Wolf extends Animal implements Predator {
     private float satiety;
     private float hp;
 
     public Wolf() {
-        super(BaseStatsUnit.STATS_BASE_WOLF);
-        this.satiety = BaseStatsUnit.STATS_BASE_WOLF.satiety;
-        this.hp = BaseStatsUnit.STATS_BASE_WOLF.weight;
+        this.satiety = Setting.statsUnit.get(this.getClass().getSimpleName()).getSatiety();
+        this.hp = Setting.statsUnit.get(this.getClass().getSimpleName()).getWeight();
     }
 
     @Override
@@ -19,16 +18,16 @@ public class Wolf extends Animal implements Predator {
         try {
             float r = hunt(x, y, island);
             if (r == 0) {
-                satiety = (float) (satiety - BaseStatsUnit.STATS_BASE_WOLF.satiety * 0.2);
+                satiety = (float) (satiety - Setting.statsUnit.get(this.getClass().getSimpleName()).getSatiety() * 0.2);
                 if (satiety <= 0) {
-                    hp = (float) (hp - BaseStatsUnit.STATS_BASE_WOLF.weight * 0.3);
+                    hp = (float) (hp - Setting.statsUnit.get(this.getClass().getSimpleName()).getWeight() * 0.3);
                     if (hp <= 0) {
                         island.removeOrganism(this, x, y);
 
                     }
                 }
-            } else if (satiety + r > BaseStatsUnit.STATS_BASE_WOLF.satiety) {
-                satiety = BaseStatsUnit.STATS_BASE_WOLF.satiety;
+            } else if (satiety + r > Setting.statsUnit.get(this.getClass().getSimpleName()).getSatiety()) {
+                satiety = Setting.statsUnit.get(this.getClass().getSimpleName()).getSatiety();
             } else {
                 satiety = satiety + r;
             }
@@ -53,7 +52,7 @@ public class Wolf extends Animal implements Predator {
     public void oldAge(int x, int y, Location island) {
         island.getLock().lock();
         try {
-            hp = (float) (hp - BaseStatsUnit.STATS_BASE_WOLF.weight * 0.2);
+            hp = (float) (hp - Setting.statsUnit.get(this.getClass().getSimpleName()).getWeight() * 0.2);
             if (hp <= 0) {
                 island.removeOrganism(this, x, y);
             }

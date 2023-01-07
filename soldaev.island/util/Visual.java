@@ -8,31 +8,32 @@ import setting.Setting;
 import java.util.Scanner;
 
 public class Visual {
-
     private final String welcomeToThisWorld = "Welcome to this world";
     private final String creatWorld = "Do you want to set the settings of this world yourself?";
-    private final String YESANDNO = "Enter (yes/no) : Y/N";
-
+    private final String yesAndNo = "Enter (yes/no) : Y/N";
     private final String enterthequantity = "Enter the quantity";
-    private final String Herbivores = "Herbivores: ";
-    private final String Predators = "Predators: ";
-    private final String Plant = "Plant: ";
+    private final String herbivores = "Herbivores: ";
+    private final String predators = "Predators: ";
+    private final String plant = "Plant: ";
     private final String timeline = "The lifetime of the world in seconds: ";
     private final String invalidinput = "invalid input";
-    private final String x = "Enter the length of the world";
-    private final String y = "Enter the width of the world";
+    private final String length = "Enter the length of the world";
+    private final String width = "Enter the width of the world";
     private final Scanner scanner = new Scanner(System.in);
     private Setting setting = new Setting();
     private BaseStatsUnit baseStatsUnit = new BaseStatsUnit();
-    private World world = new World();
+    private World world;
     private StartedNewLife startedNewLife;
 
+
     public void startIland() {
+        setting.readTheWorldSettings();
+        setting.customizeTheWorld();
 
         while (true) {
             print(welcomeToThisWorld);
             print(creatWorld);
-            print(YESANDNO);
+            print(yesAndNo);
             String s = scanner.nextLine();
             if (s.equalsIgnoreCase("Y")) {
                 createWorldParameters();
@@ -48,27 +49,27 @@ public class Visual {
 
     private void createWorldParameters() {
         print(enterthequantity);
-        print(Predators);
+        print(predators);
         int predators = scanner.nextInt();
-        print(Herbivores);
+        print(herbivores);
         int herbivores = scanner.nextInt();
-        print(Plant);
+        print(plant);
         int plant = scanner.nextInt();
         print(timeline);
         int timline = scanner.nextInt();
-        print(x);
+        print(length);
         int x = scanner.nextInt();
-        print(y);
+        print(width);
         int y = scanner.nextInt();
-        world = new World(x, y);
+        world = new World(x, y, timline);
         world.createLife(predators, herbivores, plant);
-        startedNewLife = new StartedNewLife(world, timline * 1000);
+        startedNewLife = new StartedNewLife(world);
         startedNewLife.start();
     }
 
     private void createWorldParametersDefoliate() {
         world = new World();
-        world.createLife();
+        world.createLife(world.getNumberOfPredator(), world.getNumberOfHerbivore(), world.getNumberOfGrass());
         startedNewLife = new StartedNewLife(world);
         startedNewLife.start();
     }

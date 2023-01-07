@@ -2,10 +2,10 @@ package entities.organism.animal.herbivore;
 
 
 import entities.location.Location;
-import setting.BaseStatsUnit;
 import entities.organism.Organism;
 import entities.organism.animal.Animal;
 import entities.organism.animal.predator.Predator;
+import setting.Setting;
 
 import java.util.ArrayList;
 
@@ -15,9 +15,8 @@ public class Mouse extends Animal implements Herbivore, Predator {
     private float hp;
 
     public Mouse() {
-        super(BaseStatsUnit.STATS_BASE_MOUSE);
-        this.satiety = BaseStatsUnit.STATS_BASE_MOUSE.satiety;
-        this.hp = BaseStatsUnit.STATS_BASE_MOUSE.weight;
+        this.satiety = Setting.statsUnit.get(this.getClass().getSimpleName()).getSatiety();
+        this.hp = Setting.statsUnit.get(this.getClass().getSimpleName()).getWeight();
     }
 
     @Override
@@ -39,15 +38,15 @@ public class Mouse extends Animal implements Herbivore, Predator {
                 r = hunt(x, y, island);
             }
             if (r == 0) {
-                satiety = (float) (satiety - BaseStatsUnit.STATS_BASE_MOUSE.satiety * 0.5);
+                satiety = (float) (satiety - Setting.statsUnit.get(this.getClass().getSimpleName()).getSatiety() * 0.5);
                 if (satiety <= 0) {
-                    hp = (float) (hp - BaseStatsUnit.STATS_BASE_MOUSE.weight * 0.3);
+                    hp = (float) (hp - Setting.statsUnit.get(this.getClass().getSimpleName()).getWeight() * 0.3);
                     if (hp <= 0) {
                         island.removeOrganism(this, x, y);
                     }
                 }
-            } else if (satiety + r > BaseStatsUnit.STATS_BASE_MOUSE.satiety) {
-                satiety = BaseStatsUnit.STATS_BASE_MOUSE.satiety;
+            } else if (satiety + r > Setting.statsUnit.get(this.getClass().getSimpleName()).getSatiety()) {
+                satiety = Setting.statsUnit.get(this.getClass().getSimpleName()).getSatiety();
             } else {
                 satiety = satiety + r;
             }
@@ -70,7 +69,7 @@ public class Mouse extends Animal implements Herbivore, Predator {
     public void oldAge(int x, int y, Location island) {
         island.getLock().lock();
         try {
-            hp = (float) (hp - BaseStatsUnit.STATS_BASE_MOUSE.weight * 0.2);
+            hp = (float) (hp - Setting.statsUnit.get(this.getClass().getSimpleName()).getWeight() * 0.2);
             if (hp <= 0) {
                 island.removeOrganism(this, x, y);
             }

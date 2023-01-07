@@ -1,19 +1,20 @@
 package entities.organism.animal;
 
 import entities.location.Location;
+import setting.Setting;
 import util.CoordinateHandler;
 import setting.BaseStatsUnit;
 import entities.organism.Organism;
 
 public abstract class Animal extends Organism implements CoordinateHandler {
+    protected BaseStatsUnit baseStatsUnit;
+
     public BaseStatsUnit getBaseStatsUnit() {
-        return baseStatsUnit;
+        return baseStatsUnit = Setting.statsUnit.get(this.getClass().getSimpleName());
     }
 
-    protected final BaseStatsUnit baseStatsUnit;
-
-    protected Animal(BaseStatsUnit baseStatsUnit) {
-        this.baseStatsUnit = baseStatsUnit;
+    protected Animal() {
+        this.baseStatsUnit = Setting.statsUnit.get(this.getClass().getSimpleName());
     }
 
     public abstract void eat(int x, int y, Location island);
@@ -31,7 +32,6 @@ public abstract class Animal extends Organism implements CoordinateHandler {
         } finally {
             island.getLock().unlock();
         }
-        island.getLock().unlock();
     }
 
     public abstract void multiply(int x, int y, Location island);

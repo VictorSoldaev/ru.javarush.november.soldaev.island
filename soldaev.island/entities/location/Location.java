@@ -44,8 +44,6 @@ public class Location {
     }
 
     private void createIsland() {
-
-
         for (int x = MIN_SIZE_ISLAND_COORDINATE_X; x <= maxSizeIslandCoordinateX; x++) {
             island.put(x, new HashMap<>());
             for (int y = MIN_SIZE_ISLAND_COORDINATE_Y; y <= maxSizeIslandCoordinateY; y++) {

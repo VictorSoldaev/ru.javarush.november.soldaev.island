@@ -5,38 +5,28 @@ import factory.TypeHerbivore;
 import factory.TypePredator;
 import entities.location.*;
 import entities.organism.plant.Grass;
+import setting.Setting;
 import util.Random;
 
 public class World implements Random {
     private OrganismFactory factory = new OrganismFactory();
-
     private Location island;
+    private int lifeTime = Setting.settingWorld.get("lifeTime");
+    private int numberOfPredator = Setting.settingWorld.get("numberOfPredator");
+    private int numberOfHerbivore = Setting.settingWorld.get("numberOfHerbivore");
+    private int numberOfGrass = Setting.settingWorld.get("numberOfGrass");
+    private int maxSizeIslendLength = Setting.settingWorld.get("maxSizeIslendLength");
+    private int maxSizeIslendWidth = Setting.settingWorld.get("maxSizeIslendWidth");
 
     public World() {
-        this.island = new Location(20, 20);
-
-    }
-
-    public World(int maxSizeIslendLength, int maxSizeIslendWidth) {
         this.island = new Location(maxSizeIslendLength, maxSizeIslendWidth);
     }
 
-    public void createLife() {
-        for (int i = 0; i < 20; i++) {
-            for (int j = 0; j < TypePredator.values().length; j++) {
-                TypePredator value = TypePredator.values()[j];
-                island.addOrganism(factory.create(TypePredator.values()[j]), random(island.getMinSizeIslandX(), island.getMaxSizeIslandCoordinateX()),
-                        random(island.getMinSizeIslandY(), island.getMaxSizeIslandCoordinateY()));
-            }
-        }
-        for (int i = 0; i < 20; i++) {
-            for (int j = 0; j < TypeHerbivore.values().length; j++) {
-                island.addOrganism(factory.create(TypeHerbivore.values()[j]), random(island.getMinSizeIslandX(), island.getMaxSizeIslandCoordinateX()),
-                        random(island.getMinSizeIslandY(), island.getMaxSizeIslandCoordinateY()));
-            }
-        }
-        createPlants(150);
+    public World(int maxSizeIslendLength, int maxSizeIslendWidth, int lifeTime) {
+        this.island = new Location(maxSizeIslendLength, maxSizeIslendWidth);
+        this.lifeTime = lifeTime * 1000;
     }
+
 
     public void createLife(int numberOfPredator, int numberOfHerbivore, int numberOfGrass) {
         createPredator(numberOfPredator, random(0, TypePredator.values().length));
@@ -73,6 +63,37 @@ public class World implements Random {
 
     public Location getLocation() {
         return island;
+    }
+
+    public int getLifeTime() {
+        return lifeTime;
+    }
+
+    public void setLifeTime(int lifeTime) {
+        this.lifeTime = lifeTime;
+    }
+    public int getNumberOfPredator() {
+        return numberOfPredator;
+    }
+
+    public void setNumberOfPredator(int numberOfPredator) {
+        this.numberOfPredator = numberOfPredator;
+    }
+
+    public int getNumberOfHerbivore() {
+        return numberOfHerbivore;
+    }
+
+    public void setNumberOfHerbivore(int numberOfHerbivore) {
+        this.numberOfHerbivore = numberOfHerbivore;
+    }
+
+    public int getNumberOfGrass() {
+        return numberOfGrass;
+    }
+
+    public void setNumberOfGrass(int numberOfGrass) {
+        this.numberOfGrass = numberOfGrass;
     }
 
 }

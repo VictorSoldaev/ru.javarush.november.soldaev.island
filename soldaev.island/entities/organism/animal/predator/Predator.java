@@ -4,7 +4,6 @@ import entities.location.Location;
 import util.CoordinateHandler;
 import setting.Setting;
 import entities.organism.Organism;
-
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
@@ -68,7 +67,7 @@ public interface Predator extends CoordinateHandler {
     }
 
     default boolean checkCatchPrey(Organism organism) {
-        Integer foodTableBearProbability = Setting.foodTable.get(this.getClass().getSimpleName()).get(organism.getClass().getSimpleName());
+        Integer foodTableBearProbability = Setting.food.get(this.getClass().getSimpleName()).get(organism.getClass().getSimpleName());
         return ThreadLocalRandom.current().nextInt(0, 101) < foodTableBearProbability;
     }
 }

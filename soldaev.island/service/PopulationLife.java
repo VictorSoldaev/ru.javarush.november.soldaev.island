@@ -35,7 +35,6 @@ public class PopulationLife implements Runnable {
         } finally {
             island.getLock().unlock();
         }
-
         for (Task t : tasks) {
             t.taskQueue();
         }

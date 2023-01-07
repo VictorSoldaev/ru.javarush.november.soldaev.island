@@ -1,13 +1,12 @@
 package entities.organism.plant;
 
-import setting.BaseStatsUnit;
+import setting.Setting;
 
 
 public class Grass extends Plant {
     private float hp;
 
     public Grass() {
-        super(BaseStatsUnit.STATS_BASE_GRASS);
-        this.hp = BaseStatsUnit.STATS_BASE_CATERPILLAR.weight;
+        this.hp = Setting.statsUnit.get(this.getClass().getSimpleName()).getWeight();
     }
 }

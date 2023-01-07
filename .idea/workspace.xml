@@ -4,22 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4178b345-fa82-4f91-8982-66d05c48082e" name="Changes" comment="Смена папки">
+    <list default="true" id="4178b345-fa82-4f91-8982-66d05c48082e" name="Changes" comment="fixed multithreading">
+      <change afterPath="$PROJECT_DIR$/soldaev.island/setting/config/startingWorldSettings" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/location/Earth.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/servis/Random.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/servis/StartWorld.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/servis/TypeOrganizm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/servis/UnitFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/servis/World.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/Organizm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Animal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Bear.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Duck.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Eagle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Hog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Mouse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/soldaev.island/unit/animal/Python.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ru.javarush.november.soldaev.island.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ru.javarush.november.soldaev.island.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/StarIsLand.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/StarIsLand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/entities/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/entities/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/entities/location/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/entities/location/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/herbivore/Buffalo.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/herbivore/Buffalo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/herbivore/Caterpillar.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/herbivore/Caterpillar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/herbivore/Deer.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/herbivore/Deer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/herbivore/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/herbivore/Duck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/herbivore/Goat.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/herbivore/Goat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/herbivore/Hog.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/herbivore/Hog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/herbivore/Horse.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/herbivore/Horse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/herbivore/Mouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/herbivore/Mouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/herbivore/Rabbit.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/herbivore/Rabbit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/herbivore/Sheep.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/herbivore/Sheep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/predator/Bear.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/predator/Bear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/predator/Eagle.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/predator/Eagle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/predator/Fox.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/predator/Fox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/predator/Predator.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/predator/Predator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/predator/Python.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/predator/Python.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/predator/Wolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/entities/organism/animal/predator/Wolf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/entities/organism/plant/Grass.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/entities/organism/plant/Grass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/entities/organism/plant/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/entities/organism/plant/Plant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/service/PopulationLife.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/service/PopulationLife.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/service/StartedNewLife.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/service/StartedNewLife.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/setting/BaseStatsUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/setting/BaseStatsUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/setting/Setting.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/setting/Setting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soldaev.island/util/Visual.java" beforeDir="false" afterPath="$PROJECT_DIR$/soldaev.island/util/Visual.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,32 +43,28 @@
   </component>
   <component name="ChangesViewManager">
     <option name="groupingKeys">
-      <option value="module" />
       <option value="directory" />
+      <option value="module" />
     </option>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PUSH_TAGS">
-      <GitPushTagMode>
-        <option name="argument" value="--follow-tags" />
-        <option name="title" value="Current Branch" />
-      </GitPushTagMode>
-    </option>
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -64,23 +75,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Java/project_to_modul/ru.javarush.november.soldaev.island&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/Java/для_проекта/woodstox-core-6.2.8.jar",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Java\project_to_modul\ru.javarush.november.soldaev.island\soldaev.island\location" />
       <recent name="D:\Java\project_to_modul\ru.javarush.november.soldaev.island\soldaev.island\unit\animal" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Java\project_to_modul\ru.javarush.november.soldaev.island\soldaev.island\setting\config" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="servis" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.StarIsLand">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="ru.javarush.november.soldaev.island" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="StarIsLand" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="StarIsLand" />
       <module name="ru.javarush.november.soldaev.island" />
@@ -91,6 +116,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.StarIsLand" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.StarIsLand" />
       </list>
     </recent_temporary>
@@ -307,7 +333,21 @@
       <option name="project" value="LOCAL" />
       <updated>1672072141091</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Добавлен метод старение">
+      <created>1672083439854</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1672083439854</updated>
+    </task>
+    <task id="LOCAL-00031" summary="fixed multithreading">
+      <created>1673015022542</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1673015022542</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -322,8 +362,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="создан метод для возвращения организма" />
-    <MESSAGE value="методы стали абстрактными" />
     <MESSAGE value="создан класс судьба" />
     <MESSAGE value="добавлены интерфейсы для хищников и травоядных" />
     <MESSAGE value="продумываеться работа мира" />
@@ -347,7 +385,10 @@
     <MESSAGE value="In development мир создаеться, но остались черновики просьба сильно не бить" />
     <MESSAGE value="it's alive" />
     <MESSAGE value="Смена папки" />
-    <option name="LAST_COMMIT_MESSAGE" value="Смена папки" />
+    <MESSAGE value="Добавлен метод старение" />
+    <MESSAGE value="fixed multithreading" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed multithreading" />
+    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -368,5 +409,9 @@
         <watch expression="world.earth.island.entrySet().toArray()[6]" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -1,8 +1,8 @@
 package entities.organism.animal.herbivore;
 
 import entities.location.*;
-import setting.BaseStatsUnit;
 import entities.organism.animal.Animal;
+import setting.Setting;
 
 
 public class Buffalo extends Animal implements Herbivore {
@@ -10,9 +10,8 @@ public class Buffalo extends Animal implements Herbivore {
     private float hp;
 
     public Buffalo() {
-        super(BaseStatsUnit.STATS_BASE_BUFFALO);
-        this.satiety = BaseStatsUnit.STATS_BASE_BUFFALO.satiety;
-        this.hp = BaseStatsUnit.STATS_BASE_BUFFALO.weight;
+        this.satiety = Setting.statsUnit.get(this.getClass().getSimpleName()).getSatiety();
+        this.hp = Setting.statsUnit.get(this.getClass().getSimpleName()).getWeight();
     }
 
     @Override
@@ -22,15 +21,15 @@ public class Buffalo extends Animal implements Herbivore {
             float r = lookingForGrass(x, y, island);
 
             if (r == 0) {
-                satiety = (float) (satiety - BaseStatsUnit.STATS_BASE_BUFFALO.satiety * 0.5);
+                satiety = (float) (satiety - Setting.statsUnit.get(this.getClass().getSimpleName()).getSatiety() * 0.5);
                 if (satiety <= 0) {
-                    hp = (float) (hp - BaseStatsUnit.STATS_BASE_BUFFALO.weight * 0.3);
+                    hp = (float) (hp - Setting.statsUnit.get(this.getClass().getSimpleName()).getWeight() * 0.3);
                     if (hp <= 0) {
                         island.removeOrganism(this, x, y);
                     }
                 }
-            } else if (satiety + r > BaseStatsUnit.STATS_BASE_BUFFALO.satiety) {
-                satiety = BaseStatsUnit.STATS_BASE_BUFFALO.satiety;
+            } else if (satiety + r > Setting.statsUnit.get(this.getClass().getSimpleName()).getSatiety()) {
+                satiety = Setting.statsUnit.get(this.getClass().getSimpleName()).getSatiety();
             } else {
                 satiety = satiety + r;
             }
@@ -55,7 +54,7 @@ public class Buffalo extends Animal implements Herbivore {
     public void oldAge(int x, int y, Location island) {
         island.getLock().lock();
         try {
-            hp = (float) (hp - BaseStatsUnit.STATS_BASE_BUFFALO.weight * 0.2);
+            hp = (float) (hp - Setting.statsUnit.get(this.getClass().getSimpleName()).getWeight() * 0.2);
             if (hp <= 0) {
                 island.removeOrganism(this, x, y);
             }

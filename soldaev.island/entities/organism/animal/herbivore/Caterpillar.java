@@ -1,17 +1,16 @@
 package entities.organism.animal.herbivore;
 
 import entities.location.Location;
-import setting.BaseStatsUnit;
 import entities.organism.animal.Animal;
+import setting.Setting;
 
 public class Caterpillar extends Animal implements Herbivore {
     private float satiety;
     private float hp;
 
     public Caterpillar() {
-        super(BaseStatsUnit.STATS_BASE_CATERPILLAR);
-        this.satiety = BaseStatsUnit.STATS_BASE_CATERPILLAR.satiety;
-        this.hp = BaseStatsUnit.STATS_BASE_CATERPILLAR.weight;
+        this.satiety = Setting.statsUnit.get(this.getClass().getSimpleName()).getSatiety();
+        this.hp = Setting.statsUnit.get(this.getClass().getSimpleName()).getWeight();
     }
 
     @Override
@@ -37,7 +36,7 @@ public class Caterpillar extends Animal implements Herbivore {
     public void oldAge(int x, int y, Location island) {
         island.getLock().lock();
         try {
-            hp = (float) (hp - BaseStatsUnit.STATS_BASE_CATERPILLAR.weight * 0.1);
+            hp = (float) (hp - Setting.statsUnit.get(this.getClass().getSimpleName()).getWeight() * 0.1);
             if (hp <= 0) {
                 island.removeOrganism(this, x, y);
             }

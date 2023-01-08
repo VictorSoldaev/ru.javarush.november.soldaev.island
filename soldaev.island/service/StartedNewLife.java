@@ -18,10 +18,6 @@ public class StartedNewLife extends Thread {
         this.island = world.getLocation();
     }
 
-//    public StartedNewLife(World world, int lifeTime) {
-//        this.world = world;
-//        this.island = world.getLocation();
-//    }
 
     @Override
     public void run() {
@@ -33,9 +29,9 @@ public class StartedNewLife extends Thread {
             Thread.sleep(world.getLifeTime());
             launchingLifeStreams.shutdown();
         } catch (Exception e) {
-            System.out.println("end");
+            System.out.println("А mistake in the world");
         }
-        System.out.println("end");
+        System.out.println("The end");
     }
 
     private void startWorldLife() {

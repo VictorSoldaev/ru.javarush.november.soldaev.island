@@ -15,31 +15,12 @@ public class Location {
     private int maxSizeIslandCoordinateY;
     private final HashMap<Integer, HashMap<Integer, ArrayList<Organism>>> island = new HashMap<>();
     private final Lock lock = new ReentrantLock();
-    public HashMap<String, Integer> population = new HashMap<>();
-
-
-    {
-        population.put("Bear", 0);
-        population.put("Buffalo", 0);
-        population.put("Caterpillar", 0);
-        population.put("Deer", 0);
-        population.put("Duck", 0);
-        population.put("Eagle", 0);
-        population.put("Fox", 0);
-        population.put("Goat", 0);
-        population.put("Hog", 0);
-        population.put("Horse", 0);
-        population.put("Mouse", 0);
-        population.put("Python", 0);
-        population.put("Rabbit", 0);
-        population.put("Sheep", 0);
-        population.put("Wolf", 0);
-        population.put("Grass", 0);
-    }
+    public HashMap<String, Integer> populationStatistics = new HashMap<>();
 
     public Location(int maxSizeIslendLength, int maxSizeIslendWidth) {
         maxSizeIslandCoordinateX = maxSizeIslendLength + MIN_SIZE_ISLAND_COORDINATE_X;
         maxSizeIslandCoordinateY = maxSizeIslendWidth + MIN_SIZE_ISLAND_COORDINATE_Y;
+        createStatistics();
         createIsland();
     }
 
@@ -113,31 +94,50 @@ public class Location {
     }
 
     private void counterOrganism(String organizmName, int result) {
-        population.put(organizmName, population.get(organizmName) + result);
+        populationStatistics.put(organizmName, populationStatistics.get(organizmName) + result);
     }
 
     public Lock getLock() {
         return lock;
     }
 
+    private void createStatistics(){
+        populationStatistics.put("Bear", 0);
+        populationStatistics.put("Buffalo", 0);
+        populationStatistics.put("Caterpillar", 0);
+        populationStatistics.put("Deer", 0);
+        populationStatistics.put("Duck", 0);
+        populationStatistics.put("Eagle", 0);
+        populationStatistics.put("Fox", 0);
+        populationStatistics.put("Goat", 0);
+        populationStatistics.put("Hog", 0);
+        populationStatistics.put("Horse", 0);
+        populationStatistics.put("Mouse", 0);
+        populationStatistics.put("Python", 0);
+        populationStatistics.put("Rabbit", 0);
+        populationStatistics.put("Sheep", 0);
+        populationStatistics.put("Wolf", 0);
+        populationStatistics.put("Grass", 0);
+    }
+
     @Override
     public String toString() {
-        return "Wolf " + "\uD83D\uDC3A" + population.get("Wolf") + "  " +
-                "Python " + "\uD83D\uDC0D" + population.get("Python") + "  " +
-                "Fox " + "\uD83E\uDD8A" + population.get("Fox") + "  " +
-                "Bear " + "\uD83D\uDC3B" + population.get("Bear") + "  " +
-                "Eagle " + "\uD83E\uDD85" + population.get("Eagle") + "  " +
-                "Horse " + "\uD83D\uDC0E" + population.get("Horse") + "  " +
-                "Deer " + "\uD83E\uDD8C" + population.get("Deer") + "  " +
-                "Rabbit " + "\uD83D\uDC07" + population.get("Rabbit") + "  " +
-                "Mouse " + "\uD83D\uDC01" + population.get("Mouse") + "  " +
-                "Goat " + "\uD83D\uDC10" + population.get("Goat") + "  " +
-                "Sheep " + "\uD83D\uDC11" + population.get("Sheep") + "  " +
-                "Hog " + "\uD83D\uDC17" + population.get("Hog") + "  " +
-                "Buffalo " + "\uD83D\uDC03" + population.get("Buffalo") + "  " +
-                "Duck " + "\uD83E\uDD86" + population.get("Duck") + "  " +
-                "Caterpillar " + "\uD83D\uDC1B" + population.get("Caterpillar") + "  " +
-                "Grass " + "\uD83C\uDF3F" + population.get("Grass");
+        return "Wolf " + "\uD83D\uDC3A" + populationStatistics.get("Wolf") + "  " +
+                "Python " + "\uD83D\uDC0D" + populationStatistics.get("Python") + "  " +
+                "Fox " + "\uD83E\uDD8A" + populationStatistics.get("Fox") + "  " +
+                "Bear " + "\uD83D\uDC3B" + populationStatistics.get("Bear") + "  " +
+                "Eagle " + "\uD83E\uDD85" + populationStatistics.get("Eagle") + "  " +
+                "Horse " + "\uD83D\uDC0E" + populationStatistics.get("Horse") + "  " +
+                "Deer " + "\uD83E\uDD8C" + populationStatistics.get("Deer") + "  " +
+                "Rabbit " + "\uD83D\uDC07" + populationStatistics.get("Rabbit") + "  " +
+                "Mouse " + "\uD83D\uDC01" + populationStatistics.get("Mouse") + "  " +
+                "Goat " + "\uD83D\uDC10" + populationStatistics.get("Goat") + "  " +
+                "Sheep " + "\uD83D\uDC11" + populationStatistics.get("Sheep") + "  " +
+                "Hog " + "\uD83D\uDC17" + populationStatistics.get("Hog") + "  " +
+                "Buffalo " + "\uD83D\uDC03" + populationStatistics.get("Buffalo") + "  " +
+                "Duck " + "\uD83E\uDD86" + populationStatistics.get("Duck") + "  " +
+                "Caterpillar " + "\uD83D\uDC1B" + populationStatistics.get("Caterpillar") + "  " +
+                "Grass " + "\uD83C\uDF3F" + populationStatistics.get("Grass");
     }
 
 
